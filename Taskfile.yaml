@@ -29,13 +29,12 @@ tasks:
       - $GODOT --no-window --path . --export HTML5 out/index.html
     sources:
       - '*'
-      - exclude:
-        - out/*
-        - out.zip
-        - Taskfile.yaml
-        - .gitignore
-        - .envrc
-        - .import/*
+      - exclude: out/*
+      - exclude: out.zip
+      - exclude: Taskfile.yaml
+      - exclude: .gitignore
+      - exclude: .envrc
+      - exclude: .import/*
     generates:
       - out/*
   clear:
