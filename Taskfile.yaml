@@ -12,31 +12,33 @@ tasks:
       - zip
     cmds:
       - >
-        "$BUTLER" push out.zip $ITCH:html
+        "$BUTLER" push build.zip $ITCH:html
     sources:
-      - out.zip
+      - build.zip
   zip:
     deps:
       - export
     cmds:
-      - zip out.zip out/*
+      - zip build.zip build/*
     sources:
-      - out/*
+      - build/*
     generates:
-      - out.zip
+      - build.zip
   export:
     cmds:
-      - $GODOT --no-window --path . --export HTML5 out/index.html
+      - mkdir -p build
+      - $GODOT --headless --export-release web build/index.html
     sources:
       - '*'
-      - exclude: out/*
-      - exclude: out.zip
+      - exclude: build/*
+      - exclude: build.zip
       - exclude: Taskfile.yaml
       - exclude: .gitignore
+      - exclude: .gitattributes
       - exclude: .envrc
       - exclude: .import/*
     generates:
-      - out/*
+      - build/*
   clear:
     cmds:
-      - rm -rf out/*
+      - rm -rf build/*
