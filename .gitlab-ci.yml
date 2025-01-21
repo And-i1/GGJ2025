@@ -1,5 +1,9 @@
 image: barichello/godot-ci:4.3
 
+variables:
+  PROJECT_NAME: gmj-kit
+  ITCH_NAME: alvarber
+
 # Cache imported assets between runs
 cache:
   key: import-assets
@@ -11,9 +15,9 @@ stages:
   - export
   - deploy
 
-variables:
-  PROJECT_NAME: gmj-kit
-  ITCH_NAME: alvarber
+worflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master"
 
 # Open the editor to import assets in case the cache was empty or outdated
 import-assets:
@@ -29,7 +33,7 @@ web:
   artifacts:
     name: $PROJECT_NAME-$CI_JOB_NAME
     paths:
-      - build/web
+      - build
 
 itchio:
   stage: deploy
