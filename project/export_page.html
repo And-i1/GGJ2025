@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>My Template</title>
-        <meta charset="UTF-8">
-    </head>
-    <body>
-        <canvas id="canvas"></canvas>
-        <script src="$GODOT_URL"></script>
-        <script>
-            var engine = new Engine($GODOT_CONFIG);
-            engine.startGame();
-        </script>
-    </body>
+
+<head>
+    <title>My Template</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <button id="button">Allow motion!</button>
+    </script>
+    <canvas id="canvas"></canvas>
+    <script src="$GODOT_URL"></script>
+    <script>
+        document.querySelector("button").addEventListener("click", (event) => { requestDeviceOrientationPermission() });
+        function requestDeviceOrientationPermission() {
+            if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+                DeviceOrientationEvent.requestPermission()
+                    .then(permissionState => {
+                        if (permissionState === 'granted') {
+                            var engine = new Engine($GODOT_CONFIG);
+                            engine.startGame();
+                        } else {
+                            console.log('Permission not granted for DeviceOrientation');
+                        }
+                    })
+                    .catch(console.error);
+            } else {
+                // handle regular non iOS 13+ devices
+                window.addEventListener('deviceorientation', handleDeviceOrientation);
+            }
+        }
+    </script>
+</body>
+
 </html>
