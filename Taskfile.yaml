@@ -29,7 +29,7 @@ tasks:
       - mkdir -p build
       - $GODOT --headless --path project --export-release web ../build/index.html
     sources:
-      - project
+      - project/**
     generates:
       - build/*
   clear:
