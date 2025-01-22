@@ -29,7 +29,9 @@ tasks:
       - mkdir -p build
       - $GODOT --headless --path project --export-release web ../build/index.html
     sources:
-      - project/**
+      - project/**/*
+      - except: project/**/.DS_Store
+      - except: project/.godot
     generates:
       - build/*
   clear:
