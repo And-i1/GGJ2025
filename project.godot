@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="gmj-kit.gd"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://things/gyro/gyro.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://textures/icon.svg"
+
+[display]
+
+window/size/viewport_width=648
+window/size/viewport_height=1152
 
 [rendering]
 

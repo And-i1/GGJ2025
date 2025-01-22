@@ -1,7 +1,7 @@
 image: barichello/godot-ci:4.3
 
 variables:
-  PROJECT_NAME: gmj-kit
+  PROJECT_NAME: whatever
   ITCH_NAME: alvarber
 
 # Cache imported assets between runs
