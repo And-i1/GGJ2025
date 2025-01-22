@@ -27,16 +27,9 @@ tasks:
   export:
     cmds:
       - mkdir -p build
-      - $GODOT --headless --export-release web build/index.html
+      - $GODOT --headless --path project --export-release web ../build/index.html
     sources:
-      - '*'
-      - exclude: build/*
-      - exclude: build.zip
-      - exclude: Taskfile.yaml
-      - exclude: .gitignore
-      - exclude: .gitattributes
-      - exclude: .envrc
-      - exclude: .import/*
+      - project
     generates:
       - build/*
   clear:

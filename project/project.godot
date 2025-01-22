@@ -19,6 +19,7 @@ config/icon="res://textures/icon.svg"
 
 window/size/viewport_width=648
 window/size/viewport_height=1152
+window/handheld/orientation=1
 
 [rendering]
 
