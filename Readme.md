@@ -8,7 +8,7 @@ A bunch of tools and utilties for gamejams in Godot.
 * shaders/particles/vfx
   * palette recoloring
   * explosion & tornado port?
-* Gyro mobile web
+  * vertical fog?
 * card game
 * load/save
 * credits
@@ -32,7 +32,7 @@ A bunch of tools and utilties for gamejams in Godot.
 ### Gyro
 
 A prototype of accesing accelerometer data in an web-export for mobile.
-Qorking on chrome, unknown issue on firefox, permission issue on safari.
+TODO: Qorking on chrome, unknown issue on firefox, permission issue on safari.
 
 ### Lofi
 
@@ -41,3 +41,7 @@ A subviewport trick that renders a 3d scene in lower resolution.
 ### Start menu
 
 Literally the minimum start menu
+
+### Skybox
+
+A sokpop skybox. TODO: Recreate more exactly

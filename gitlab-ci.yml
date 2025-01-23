@@ -42,3 +42,13 @@ itchio:
     - butler push build.zip $ITCH_NAME/$PROJECT_NAME:html
   dependencies:
     - web
+  
+pages:
+  stage: deploy
+  script:
+    - mkdir public
+    - mv build public
+  pages: true
+  artifacts:
+    path:
+      - public

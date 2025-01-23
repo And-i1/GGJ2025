@@ -5,8 +5,8 @@ var _permission_cb = JavaScriptBridge.create_callback(asked_for_permission)
 
 func _ready() -> void:
 	var window = JavaScriptBridge.get_interface("window")
-	# window.ondeviceorientation = _dev_orientation
-	window.addEventListener("deviceorientation", on_device_orientation, true)
+	window.ondeviceorientation = _dev_orientation
+	# window.addEventListener("deviceorientation", on_device_orientation, true)
 	$CenterContainer/Label.text = "On ready!"
 	var dev_orientation = JavaScriptBridge.get_interface("DeviceOrientationEvent")
 	$CenterContainer/Label.text += "\n{}\n{}".format([dev_orientation, on_device_orientation], "{}")
