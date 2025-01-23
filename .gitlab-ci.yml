@@ -46,7 +46,6 @@ itchio:
 pages:
   stage: deploy
   script:
-    - mkdir public
     - mv build public
     - ls public
   dependencies:

@@ -6,6 +6,7 @@ A bunch of tools and utilties for gamejams in Godot.
 
 * input
 * shaders/particles/vfx
+  * line boil
   * palette recoloring
   * explosion & tornado port?
   * vertical fog?
