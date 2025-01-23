@@ -5,10 +5,11 @@ var _permission_cb = JavaScriptBridge.create_callback(asked_for_permission)
 
 func _ready() -> void:
 	var window = JavaScriptBridge.get_interface("window")
-	window.myFunc()
-	# await get_tree().create_timer(2).timeout
-	# $CenterContainer/Label.text = "On ready!"
-	# var dev_orientation = JavaScriptBridge.get_interface("DeviceOrientationEvent")
+	# window.ondeviceorientation = _dev_orientation
+	window.addEventListener("deviceorientation", on_device_orientation, true)
+	$CenterContainer/Label.text = "On ready!"
+	var dev_orientation = JavaScriptBridge.get_interface("DeviceOrientationEvent")
+	$CenterContainer/Label.text += "\n{}\n{}".format([dev_orientation, on_device_orientation], "{}")
 	# if JavaScriptBridge.eval("typeof DeviceOrientationEvent.requestPermission === 'function'"):
 	# 	$CenterContainer/Label.text += "\nPermission needed"
 	# 	dev_orientation.requestPermission().then(_permission_cb)
@@ -18,7 +19,7 @@ func _ready() -> void:
 	
 func on_device_orientation(args) -> void:
 	var rot = args[0]
-	$CenterContainer/Label.text += "{} {} {}".format([rot.alpha, rot.beta, rot.gamma], "{}")
+	$CenterContainer/Label.text = "{} {} {}".format([rot.alpha, rot.beta, rot.gamma], "{}")
 
 func asked_for_permission(args) -> void:
 	var permission = args[0]
