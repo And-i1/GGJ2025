@@ -7,13 +7,24 @@
 </head>
 
 <body>
-    <button id="button">Allow motion?</button>
+    <button id="button">Gyro test</button>
     </script>
     <canvas id="canvas"></canvas>
     <script src="$GODOT_URL"></script>
     <script>
         var btn = document.getElementById("button");
-        btn.addEventListener("click", (event) => { requestDeviceOrientationPermission() });
+        if (typeof DeviceOrientationEvent !== 'undefined')
+        {
+            btn.textContent = "No orientation sensor available :(";
+        }
+        else if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+            btn.textContent = "Allow orientaion please";
+            btn.addEventListener("click", (event) => { requestDeviceOrientationPermission() });
+        }
+        else {
+            btn.textContent = "No need";
+            new Engine($GODOT_CONFIG).startGame();
+        }
         function requestDeviceOrientationPermission() {
             btn.textContent = "asking";
             if (typeof DeviceOrientationEvent !== 'undefined' &&
@@ -31,9 +42,7 @@
                     })
                     .catch(console.error);
             } else {
-                // handle regular non iOS 13+ devices
-                btn.textContent = "no need";
-                // window.addEventListener('deviceorientation', handleDeviceOrientation);
+                btn.textContent = "Trying anyway";
                 new Engine($GODOT_CONFIG).startGame();
             }
         }
