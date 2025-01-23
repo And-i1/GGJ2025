@@ -50,5 +50,5 @@ pages:
     - mv build public
   pages: true
   artifacts:
-    path:
+    paths:
       - public
