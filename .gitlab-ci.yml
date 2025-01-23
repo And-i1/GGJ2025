@@ -47,7 +47,6 @@ pages:
   stage: deploy
   script:
     - mv build public
-    - ls public
   dependencies:
     - web
   pages: true
