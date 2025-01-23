@@ -12,26 +12,27 @@
     <canvas id="canvas"></canvas>
     <script src="$GODOT_URL"></script>
     <script>
-        document.querySelector("button").addEventListener("click", (event) => { requestDeviceOrientationPermission() });
+        var btn = document.getElementById("button");
+        btn.addEventListener("click", (event) => { requestDeviceOrientationPermission() });
         function requestDeviceOrientationPermission() {
-            document.querySelector("button").textContent = "asking";
+            btn.textContent = "asking";
             if (typeof DeviceOrientationEvent !== 'undefined' &&
                 typeof DeviceOrientationEvent.requestPermission === 'function') {
                 DeviceOrientationEvent.requestPermission()
                     .then(permissionState => {
                         if (permissionState === 'granted') {
-                            document.querySelector("button").textContent = "granted";
-                            var engine = new Engine($GODOT_CONFIG);
-                            engine.startGame();
+                            btn.textContent = "granted";
+                            btn.remove();
+                            new Engine($GODOT_CONFIG).startGame();
                         } else {
                             console.log('Permission not granted for DeviceOrientation');
-                            document.querySelector("button").textContent = "denied";
+                            btn.textContent = "denied";
                         }
                     })
                     .catch(console.error);
             } else {
                 // handle regular non iOS 13+ devices
-                document.querySelector("button").textContent = "no need";
+                btn.textContent = "no need";
                 // window.addEventListener('deviceorientation', handleDeviceOrientation);
                 new Engine($GODOT_CONFIG).startGame();
             }

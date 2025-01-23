@@ -24,7 +24,7 @@ A bunch of tools and utilties for gamejams in Godot.
 
 ### Gitlab
 
-* Add secret API key as `BUTLER_API_KEY`
+* Add secret API key as `BUTL∏ER_API_KEY`
 * rename file `.gitlab-ci.yml.disabled` to `.gitlab-ci.yml`
 * set variables `PROJECT_NAME` & `ITCH_NAME`
 
