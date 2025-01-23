@@ -48,6 +48,9 @@ pages:
   script:
     - mkdir public
     - mv build public
+    - ls public
+  dependencies:
+    - web
   pages: true
   artifacts:
     paths:
