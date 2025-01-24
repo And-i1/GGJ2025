@@ -25,9 +25,10 @@ alignment = 1
 [node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_pl2ve")
-text = "Start"
+text = " > "
 
 [node name="Button2" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_pl2ve")
-text = "Exit"
+text = " X "
+icon_alignment = 1

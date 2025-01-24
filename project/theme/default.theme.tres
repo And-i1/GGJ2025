@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://dwoio8l8rva2v"]
 
-[ext_resource type="FontFile" uid="uid://c5cfs0kdpgfe5" path="res://fonts/InterVariable.ttf" id="1_j834k"]
+[ext_resource type="FontFile" uid="uid://o15tr0gvxt8t" path="res://fonts/m3x6.ttf" id="1_ipf4p"]
 
 [resource]
-default_font = ExtResource("1_j834k")
-default_font_size = 64
+default_font = ExtResource("1_ipf4p")
+default_font_size = 128
