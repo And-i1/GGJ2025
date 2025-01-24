@@ -18,7 +18,7 @@ func on_device_orientation(args) -> void:
 	var yy = remap(y, 0, 180, -30, 30)
 	$Plane.rotation_degrees = Vector3(xx, 0, yy)
 	
-	$Debug.text = "x = {}\ny = {}".format([xx, yy], "{}")
+	$Debug.text = "x = {}\ny = {}".format(["%.2f" % xx, "%.2f" % yy], "{}")
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:

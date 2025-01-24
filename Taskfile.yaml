@@ -1,7 +1,7 @@
 version: '3'
 
 env:
-  ITCH: alvarber/whatever
+  ITCH: alvarber/ggj25
 
 dotenv:
   - .envrc
