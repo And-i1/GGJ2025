@@ -14,11 +14,9 @@
     <script>
         var btn = document.getElementById("button");
         if (typeof DeviceOrientationEvent === 'undefined')
-        {
             btn.textContent = "No orientation sensor available :(";
-        }
         else if (typeof DeviceOrientationEvent.requestPermission === 'function') {
-            btn.textContent = "Allow orientaion please";
+            btn.textContent = "Allow orientation please";
             btn.addEventListener("click", (event) => { requestDeviceOrientationPermission() });
         }
         else {
@@ -26,13 +24,13 @@
             new Engine($GODOT_CONFIG).startGame();
         }
         function requestDeviceOrientationPermission() {
-            btn.textContent = "asking";
+            btn.textContent = "Asking";
             if (typeof DeviceOrientationEvent !== 'undefined' &&
                 typeof DeviceOrientationEvent.requestPermission === 'function') {
                 DeviceOrientationEvent.requestPermission()
                     .then(permissionState => {
                         if (permissionState === 'granted') {
-                            btn.textContent = "granted";
+                            btn.textContent = "Granted";
                             btn.remove();
                             new Engine($GODOT_CONFIG).startGame();
                         } else {

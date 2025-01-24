@@ -33,7 +33,8 @@ A bunch of tools and utilties for gamejams in Godot.
 ### Gyro
 
 A prototype of accesing accelerometer data in an web-export for mobile.
-TODO: Qorking on chrome, unknown issue on firefox, permission issue on safari.
+Works on ios/safari via gitlab pages. Works on itch via chrome.
+TODO: unknown issue on firefox.
 
 ### Lofi
 
