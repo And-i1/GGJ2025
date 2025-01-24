@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bl1pqysyx5b47"]
+[gd_scene load_steps=8 format=3 uid="uid://bl1pqysyx5b47"]
 
 [ext_resource type="Script" path="res://things/gyro/gyro.gd" id="1_uraa5"]
 [ext_resource type="Texture2D" uid="uid://2goec6inia8f" path="res://textures/icon.svg" id="3_dp1wr"]
+[ext_resource type="Theme" uid="uid://dwoio8l8rva2v" path="res://theme/default.theme.tres" id="3_j7sy8"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7ccjj"]
 
@@ -74,3 +75,15 @@ shape = SubResource("SphereShape3D_fq8pf")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ball2"]
 mesh = SubResource("SphereMesh_tcchl")
 skeleton = NodePath("../..")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_j7sy8")
+text = "x = {}
+y = {}"
+horizontal_alignment = 1
+vertical_alignment = 1
