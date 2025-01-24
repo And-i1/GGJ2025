@@ -22,5 +22,5 @@ func on_device_orientation(args) -> void:
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
-		$Ball2.global_position = Vector3(0, 0, 0)
 		$Label.text = "Tap!"
+		$Ball2.global_position = Vector3(0, 0, 0)
