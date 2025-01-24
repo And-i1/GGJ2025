@@ -1,14 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bl1pqysyx5b47"]
+[gd_scene load_steps=3 format=3 uid="uid://bl1pqysyx5b47"]
 
 [ext_resource type="Script" path="res://things/gyro/gyro.gd" id="1_uraa5"]
-[ext_resource type="FontFile" uid="uid://c5cfs0kdpgfe5" path="res://fonts/InterVariable.ttf" id="2_68pfl"]
 [ext_resource type="Texture2D" uid="uid://2goec6inia8f" path="res://textures/icon.svg" id="3_dp1wr"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_gtehl"]
-font = ExtResource("2_68pfl")
-font_size = 64
-outline_size = 32
-outline_color = Color(0, 0, 0, 1)
 
 [node name="Gyro" type="Node"]
 script = ExtResource("1_uraa5")
@@ -19,17 +12,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Box" type="ColorRect" parent="CenterContainer"]
-custom_minimum_size = Vector2(400, 400)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CenterContainer"]
-layout_mode = 2
-text = "Hello World"
-label_settings = SubResource("LabelSettings_gtehl")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer"]
 visible = false
@@ -51,3 +33,35 @@ grow_vertical = 2
 pivot_offset = Vector2(64, 64)
 texture = ExtResource("3_dp1wr")
 stretch_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.2
+anchor_right = 0.8
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AspectRatioContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+
+[node name="Box" type="ColorRect" parent="AspectRatioContainer/MarginContainer"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
