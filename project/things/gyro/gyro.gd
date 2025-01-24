@@ -31,4 +31,3 @@ func _input(event):
 			ball.queue_free()
 		ball = scn.instantiate()
 		add_child(ball)
-		$Debug2.text = "Tap! - {}".format([$Ball2.global_transform.origin], "{}")

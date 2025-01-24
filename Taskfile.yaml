@@ -38,11 +38,9 @@ tasks:
     cmds:
       # - git clone --branch gh-pages https://github.com/And-i1/GGJ2025.git rmfolder
       - cp build/web/* rmfolder/
-      - cd rmfolder
-      - git add .
-      - git commit -m "New version"
-      - git push origin gh-pages
-      - cd ..
+      - git -C rmfolder add .
+      - git -C rmfolder commit -m "New version"
+      - git -C rmfolder push origin gh-pages
     deps:
       - export
   clear:
