@@ -28,7 +28,7 @@ func on_device_orientation(args) -> void:
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if ball != null:
-			remove_child(ball)
+			ball.queue_free()
 		ball = scn.instantiate()
 		add_child(ball)
 		$Debug2.text = "Tap! - {}".format([$Ball2.global_transform.origin], "{}")
