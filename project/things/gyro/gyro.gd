@@ -13,5 +13,4 @@ func on_device_orientation(args) -> void:
 	var window = get_window()
 	var xx = remap(x, 0.0, 180.0, 0.0, window.size.x)
 	var yy = remap(y, 0.0, 180.0, 0.0, window.size.y)
-	print(xx)
 	$Ball.position = Vector2(xx, yy)
