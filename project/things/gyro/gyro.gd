@@ -8,9 +8,10 @@ func _ready() -> void:
 	
 func on_device_orientation(args) -> void:
 	var rot = args[0]
-	var x = clamp(float(rot.beta), -90.0, 90.0) + 90
-	var y = float(rot.gamma) + 90
+	var x = clamp(float(rot.gamma), -90.0, 90.0) + 90
+	var y = float(rot.beta) + 90
 	var window = get_window()
-	var xx = remap(x, 0.0, -180.0, 0.0, window.size.x)
-	var yy = remap(y, 0.0, -180.0, 0.0, window.size.y)
-	$Ball.position = Vector2(yy, xx)
+	var xx = remap(x, 0.0, 180.0, 0.0, window.size.x)
+	var yy = remap(y, 0.0, 180.0, 0.0, window.size.y)
+	print(xx)
+	$Ball.position = Vector2(xx, yy)
