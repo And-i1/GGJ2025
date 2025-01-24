@@ -23,4 +23,4 @@ func on_device_orientation(args) -> void:
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		$Debug2.text = "Tap!"
-		$Ball2.global_position = Vector3(0, 0, 0)
+		$Ball2.global_transform.origin = Vector3.ZERO
