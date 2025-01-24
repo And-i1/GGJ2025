@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bl1pqysyx5b47"]
+[gd_scene load_steps=7 format=3 uid="uid://bl1pqysyx5b47"]
 
 [ext_resource type="Script" path="res://things/gyro/gyro.gd" id="1_uraa5"]
+[ext_resource type="PackedScene" uid="uid://c1sl6wanw55q1" path="res://scenes/ball_3d.tscn" id="2_txnts"]
 [ext_resource type="Texture2D" uid="uid://2goec6inia8f" path="res://textures/icon.svg" id="3_dp1wr"]
 [ext_resource type="Theme" uid="uid://dwoio8l8rva2v" path="res://theme/default.theme.tres" id="3_j7sy8"]
 
@@ -10,15 +11,9 @@ size = Vector2(3, 3)
 [sub_resource type="BoxShape3D" id="BoxShape3D_kjnh5"]
 size = Vector3(3, 0.5, 3)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_fq8pf"]
-radius = 0.2
-
-[sub_resource type="SphereMesh" id="SphereMesh_tcchl"]
-radius = 0.2
-height = 0.4
-
 [node name="Gyro" type="Node"]
 script = ExtResource("1_uraa5")
+scn = ExtResource("2_txnts")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 visible = false
@@ -70,15 +65,6 @@ mesh = SubResource("PlaneMesh_7ccjj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.225, 0)
 shape = SubResource("BoxShape3D_kjnh5")
-
-[node name="Ball2" type="RigidBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ball2"]
-shape = SubResource("SphereShape3D_fq8pf")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ball2"]
-mesh = SubResource("SphereMesh_tcchl")
-skeleton = NodePath("../..")
 
 [node name="Debug" type="Label" parent="."]
 anchors_preset = 15

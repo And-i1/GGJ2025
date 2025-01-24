@@ -2,6 +2,8 @@ extends Node
 
 var _dev_orientation = JavaScriptBridge.create_callback(on_device_orientation)
 var curve = load("res://things/curve/new_curve.tres")
+@export var scn : PackedScene
+var ball = null
 
 func _ready() -> void:
 	var window = JavaScriptBridge.get_interface("window")
@@ -26,4 +28,9 @@ func on_device_orientation(args) -> void:
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
 		$Ball2.set_position(Vector3.ZERO)
+		if ball != null:
+			remove_child(ball)
+		ball = scn.instantiate()
+		add_child(ball)
+		$Ball2.global_transform.origin = Vector3.ZERO
 		$Debug2.text = "Tap! - {}".format([$Ball2.global_transform.origin], "{}")
