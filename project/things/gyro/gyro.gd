@@ -21,5 +21,6 @@ func on_device_orientation(args) -> void:
 	$Label.text = "x = {}\ny = {}".format([xx, yy], "{}")
 
 func _input(event):
-	if event is InputEventScreenTouch and event.pressed:
+	if event is InputEventMouseButton and event.pressed:
 		$Ball2.position = Vector3(0, 0, 0)
+		$Label.text = "Tap!"
