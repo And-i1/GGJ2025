@@ -89,5 +89,15 @@ grow_vertical = 2
 theme = ExtResource("3_j7sy8")
 text = "x = {}
 y = {}"
+vertical_alignment = 2
+
+[node name="Debug2" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_j7sy8")
+text = "?"
 horizontal_alignment = 2
 vertical_alignment = 2
