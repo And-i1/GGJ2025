@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxwofyvwkvplh"]
+
+[ext_resource type="Script" path="res://things/fps-counter/fps_counter.gd" id="1_p8stg"]
+[ext_resource type="Theme" uid="uid://dwoio8l8rva2v" path="res://theme/default.theme.tres" id="2_vb77a"]
+
+[node name="Fps-counter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p8stg")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_vb77a")
+text = "30"
+horizontal_alignment = 2

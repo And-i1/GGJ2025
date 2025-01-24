@@ -11,6 +11,9 @@ func on_device_orientation(args) -> void:
 	var x = clamp(float(rot.gamma), -90.0, 90.0) + 90
 	var y = float(rot.beta) + 90
 	var window = get_window()
-	var xx = remap(x, 0.0, 180.0, 0.0, window.size.x)
-	var yy = remap(y, 0.0, 180.0, 0.0, window.size.y)
-	$Ball.position = Vector2(xx, yy)
+	# var xx = remap(x, 0.0, 180.0, 0.0, window.size.x)
+	# var yy = remap(y, 0.0, 180.0, 0.0, window.size.y)
+	# $Ball.position = Vector2(xx, yy)
+	var xx = remap(x, 0, 180, -30, 30)
+	var yy = remap(y, 0, 180, -30, 30)
+	$Plane.rotation = Vector3(xx, 0, yy)
