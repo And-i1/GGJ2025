@@ -16,10 +16,9 @@ func on_device_orientation(args) -> void:
 	# $Ball.position = Vector2(xx, yy)
 	var xx = remap(x, 0, 180, -30, 30)
 	var yy = remap(y, 0, 180, -30, 30)
-	$Plane.rotation_degrees = Vector3(0, 0, xx)
+	$Plane.rotation_degrees = Vector3(0, 0, -xx)
 	$Label.text = "x = {}\ny = {}".format([xx, yy], "{}")
 
 func _input(event):
-	if event is InputEventScreenTouch:
-		if event.pressed:
-			$Ball2.position = Vector3.ZERO
+	if event is InputEventScreenTouch and event.pressed:
+		$Ball2.position = Vector3.ZERO
