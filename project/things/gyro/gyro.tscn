@@ -80,7 +80,7 @@ shape = SubResource("SphereShape3D_fq8pf")
 mesh = SubResource("SphereMesh_tcchl")
 skeleton = NodePath("../..")
 
-[node name="Label" type="Label" parent="."]
+[node name="Debug" type="Label" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -89,5 +89,5 @@ grow_vertical = 2
 theme = ExtResource("3_j7sy8")
 text = "x = {}
 y = {}"
-horizontal_alignment = 1
-vertical_alignment = 1
+horizontal_alignment = 2
+vertical_alignment = 2
