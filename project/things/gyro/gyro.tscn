@@ -51,7 +51,7 @@ texture = ExtResource("3_dp1wr")
 stretch_mode = 2
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.898733, 0.00273487, 0.438487, 0, 0.999981, -0.00623694, -0.438496, 0.00560535, 0.898716, 1.79819, 0.699168, 4.60813)
+transform = Transform3D(0.731139, -0.324407, 0.600163, 0, 0.87971, 0.475511, -0.682228, -0.347665, 0.643191, 2.92404, 1.83817, 3.06061)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
@@ -66,11 +66,11 @@ mesh = SubResource("PlaneMesh_7ccjj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.225342, 1.09418)
 shape = SubResource("BoxShape3D_kjnh5")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
+[node name="Ball2" type="RigidBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ball2"]
 shape = SubResource("SphereShape3D_fq8pf")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ball2"]
 mesh = SubResource("SphereMesh_tcchl")
 skeleton = NodePath("../..")
