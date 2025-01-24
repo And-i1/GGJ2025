@@ -16,8 +16,9 @@ func on_device_orientation(args) -> void:
 	# $Ball.position = Vector2(xx, yy)
 	var xx = remap(x, 0, 180, -30, 30)
 	var yy = remap(y, 0, 180, -30, 30)
-	$Plane.rotation_degrees = Vector3(-xx, 0, yy)
-	$Label.text = "x = {:.2f}\ny = {:.2f}".format([xx, yy], "{}")
+	$Plane.rotation_degrees = Vector3(xx, 0, yy)
+	
+	$Label.text = "x = {}\ny = {:}".format(["%.2f" % xx, "%.2f" % yy], "{}")
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
