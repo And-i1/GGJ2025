@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl1pqysyx5b47"]
+[gd_scene load_steps=5 format=3 uid="uid://bl1pqysyx5b47"]
 
 [ext_resource type="Script" path="res://things/gyro/gyro.gd" id="1_uraa5"]
 [ext_resource type="FontFile" uid="uid://c5cfs0kdpgfe5" path="res://fonts/InterVariable.ttf" id="2_68pfl"]
+[ext_resource type="Texture2D" uid="uid://2goec6inia8f" path="res://textures/icon.svg" id="3_dp1wr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gtehl"]
 font = ExtResource("2_68pfl")
@@ -25,3 +26,28 @@ text = "Hello World"
 label_settings = SubResource("LabelSettings_gtehl")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Box" type="ColorRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("3_dp1wr")
+
+[node name="Ball" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.56
+offset_top = -64.0
+offset_right = 57.44
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("3_dp1wr")
+stretch_mode = 2

@@ -20,6 +20,12 @@ func _ready() -> void:
 func on_device_orientation(args) -> void:
 	var rot = args[0]
 	$CenterContainer/Label.text = "{} {} {}".format([rot.alpha, rot.beta, rot.gamma], "{}")
+	var x = clamp(rot.beta, -90, 90) + 90
+	var y = rot.gamma + 90
+	var window = get_window()
+	var xx = remap(x, 0, 180, 0, window.width)
+	var yy = remap(y, 0, 180, 0, window.height)
+	$Ball.position = Vector2(xx, yy)
 
 func asked_for_permission(args) -> void:
 	var permission = args[0]
