@@ -43,7 +43,7 @@ tasks:
       - git commit -m "New version"
       - git push github gh-pages
       - cd ..
-      - rm -rf rmfolder
+      # - rm -rf rmfolder
     deps:
       - export
   clear:
