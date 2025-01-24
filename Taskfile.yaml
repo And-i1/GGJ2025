@@ -26,14 +26,26 @@ tasks:
       - build.zip
   export:
     cmds:
-      - mkdir -p build
-      - $GODOT --headless --path project --export-release web ../build/index.html
+      - mkdir -p build/web
+      - $GODOT --headless --path project --export-release web ../build/web/index.html
     sources:
       - project/**/*
       - except: project/**/.DS_Store
       - except: project/.godot
     generates:
       - build/*
+  gh-pages:
+    cmds:
+      - git clone --branch gh-pages https://github.com/And-i1/GGJ2025.git rmfolder
+      - cp build/web/* rmfolder/
+      - cd rmfolder
+      - git add .
+      - git commit -m "New version"
+      - git push origin gh-pages
+      - cd ..
+      - rm -rf rmfolder
+    deps:
+      - export
   clear:
     cmds:
       - rm -rf build/*
