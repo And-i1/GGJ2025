@@ -84,9 +84,6 @@ color = Color(0.0901961, 0.0862745, 0.14902, 1)
 [node name="Camera3D" parent="SubViewportContainer/SubViewport/Environment" index="0"]
 environment = SubResource("Environment_lmray")
 
-[node name="Debug" parent="SubViewportContainer" index="1"]
-visible = false
-
 [node name="window" parent="." instance=ExtResource("3_uvr2b")]
 transform = Transform3D(0.799157, -0.38531, 0.461394, 0.5, -5.96046e-08, -0.866025, 0.333688, 0.922787, 0.192655, 1.3113, 0, -4.10583)
 

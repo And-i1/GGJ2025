@@ -27,7 +27,7 @@ tasks:
   export:
     cmds:
       - mkdir -p build/web
-      - $GODOT --headless --path project --export-release web ../build/web/index.html
+      - $GODOT --headless --verbose --path project --export-release web ../build/web/index.html
     sources:
       - project/**/*
       - except: project/**/.DS_Store
@@ -37,6 +37,7 @@ tasks:
   gh-pages:
     cmds:
       # - git clone --branch gh-pages https://github.com/And-i1/GGJ2025.git rmfolder
+      - git -C rmfolder pull origin gh-pages
       - cp build/web/* rmfolder/
       - git -C rmfolder add .
       - git -C rmfolder commit -m "New version"
