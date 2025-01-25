@@ -8,8 +8,9 @@ func _process(_delta: float) -> void:
 	var max_x_scaling = size[0] / x_basis
 	var max_y_scaling = size[1] / y_basis
 	var min_scale = min(max_x_scaling, max_y_scaling)
-	$CenterContainer/SubViewportContainer.size = Vector2(x_basis * min_scale, y_basis * min_scale)
-	$CenterContainer/SubViewportContainer.scale = Vector2(min_scale, min_scale)
-	$CenterContainer/SubViewportContainer/SubViewport.size = Vector2(x_basis, y_basis)
+	$SubViewportContainer.size = Vector2(x_basis * min_scale, y_basis * min_scale)
+	$SubViewportContainer.size = Vector2(x_basis * min_scale, y_basis * min_scale)
+	$SubViewportContainer.scale = Vector2(min_scale, min_scale)
+	$SubViewportContainer/SubViewport.size = Vector2(x_basis, y_basis)
 	$Debug.text = "{}x{}\ns={}".format([size[0], size[1], min_scale], "{}")
 	

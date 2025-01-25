@@ -34,4 +34,3 @@ use_top_left = true
 
 [node name="SubViewportContainer" parent="CenterContainer" instance=ExtResource("1_7elyo")]
 layout_mode = 2
-script = null
