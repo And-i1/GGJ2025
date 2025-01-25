@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://s4ptgmg40s5m"]
+[gd_scene load_steps=6 format=3 uid="uid://s4ptgmg40s5m"]
 
 [ext_resource type="Material" uid="uid://cvaiqjxbv0eua" path="res://textures/spaceship.mat.tres" id="1_rno14"]
 [ext_resource type="Material" uid="uid://bbele0sjw2qhx" path="res://textures/spaceship_floor.mat.tres" id="2_1f3sg"]
@@ -12,11 +12,11 @@ ring_segments = 8
 [sub_resource type="PlaneMesh" id="PlaneMesh_n6t3q"]
 size = Vector2(10, 10)
 
-[node name="Environment" type="Node3D"]
+[sub_resource type="Environment" id="Environment_qqfux"]
+background_mode = 1
+background_color = Color(0.0901961, 0.0862745, 0.14902, 1)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.920547, -0.00586839, -0.390587, 0.00620714, 0.999981, -0.000395072, 0.390582, -0.00206076, 0.920566, 0.486515, -0.235912, -2.05235)
-fov = 90.0
+[node name="Environment" type="Node3D"]
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
 material_override = ExtResource("1_rno14")
@@ -32,3 +32,8 @@ depth = 0.58
 transform = Transform3D(0.927184, 0, -0.374607, 0, 1, 0, 0.374607, 0, 0.927184, 0, -1.06667, 0)
 material_override = ExtResource("2_1f3sg")
 mesh = SubResource("PlaneMesh_n6t3q")
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(0.920547, -0.00586839, -0.390587, 0.00620714, 0.999981, -0.000395072, 0.390582, -0.00206076, 0.920566, 0.486515, -0.235912, -2.05235)
+environment = SubResource("Environment_qqfux")
+fov = 90.0

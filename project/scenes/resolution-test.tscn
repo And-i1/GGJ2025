@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ce3n1r0iggsrg"]
+[gd_scene load_steps=14 format=3 uid="uid://d3agday6jn8jl"]
 
 [ext_resource type="PackedScene" uid="uid://ogb8ulbb722r" path="res://things/lofi/lofi.tscn" id="1_7elyo"]
 [ext_resource type="PackedScene" uid="uid://s4ptgmg40s5m" path="res://scenes/environment.tscn" id="2_pcr1h"]
@@ -6,10 +6,6 @@
 [ext_resource type="Material" uid="uid://xv17yqujfok3" path="res://textures/window.mat.tres" id="4_8rtwf"]
 [ext_resource type="Material" uid="uid://8gt67ad7j53l" path="res://textures/planet.mat.tres" id="5_l7twu"]
 [ext_resource type="PackedScene" uid="uid://cxwofyvwkvplh" path="res://things/fps-counter/fps-counter.tscn" id="6_2rawv"]
-
-[sub_resource type="Environment" id="Environment_lmray"]
-background_mode = 1
-background_color = Color(0.0901961, 0.0862745, 0.14902, 1)
 
 [sub_resource type="Animation" id="Animation_83lg2"]
 length = 0.001
@@ -81,9 +77,6 @@ color = Color(0.0901961, 0.0862745, 0.14902, 1)
 
 [node name="Environment" parent="SubViewportContainer/SubViewport" index="0" instance=ExtResource("2_pcr1h")]
 
-[node name="Camera3D" parent="SubViewportContainer/SubViewport/Environment" index="0"]
-environment = SubResource("Environment_lmray")
-
 [node name="window" parent="." instance=ExtResource("3_uvr2b")]
 transform = Transform3D(0.799157, -0.38531, 0.461394, 0.5, -5.96046e-08, -0.866025, 0.333688, 0.922787, 0.192655, 1.3113, 0, -4.10583)
 
@@ -122,5 +115,4 @@ color_initial_ramp = SubResource("Gradient_s81t4")
 [node name="Fps-counter" parent="." instance=ExtResource("6_2rawv")]
 
 [editable path="SubViewportContainer"]
-[editable path="SubViewportContainer/SubViewport/Environment"]
 [editable path="window"]
