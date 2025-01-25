@@ -30,4 +30,4 @@ func _input(event):
 		if ball != null:
 			ball.queue_free()
 		ball = scn.instantiate()
-		add_child(ball)
+		add_child(ball, true)
