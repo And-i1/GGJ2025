@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://s4ptgmg40s5m"]
+[gd_scene load_steps=22 format=3 uid="uid://s4ptgmg40s5m"]
 
 [ext_resource type="Material" uid="uid://cvaiqjxbv0eua" path="res://textures/spaceship.mat.tres" id="1_rno14"]
 [ext_resource type="Material" uid="uid://bbele0sjw2qhx" path="res://textures/spaceship_floor.mat.tres" id="2_1f3sg"]
@@ -6,6 +6,8 @@
 [ext_resource type="Material" uid="uid://xv17yqujfok3" path="res://textures/window.mat.tres" id="4_mxc2u"]
 [ext_resource type="Material" uid="uid://8gt67ad7j53l" path="res://textures/planet.mat.tres" id="5_i0255"]
 [ext_resource type="Material" uid="uid://bh3tyufogr6pa" path="res://textures/hands.mat.tres" id="6_iqfy1"]
+[ext_resource type="Material" uid="uid://bui7xepcrfhr0" path="res://textures/ball.mat.tres" id="7_8ksna"]
+[ext_resource type="Material" uid="uid://bwvwqdbnrsx2a" path="res://textures/board.mat.tres" id="8_ll13h"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_dp5a1"]
 inner_radius = 2.0
@@ -83,6 +85,15 @@ interpolation_mode = 1
 offsets = PackedFloat32Array(0, 0.540625)
 colors = PackedColorArray(0.992157, 0.894118, 0.356863, 1, 1, 1, 1, 1)
 
+[sub_resource type="SphereMesh" id="SphereMesh_eon6x"]
+radius = 0.1
+height = 0.2
+radial_segments = 8
+rings = 8
+
+[sub_resource type="BoxMesh" id="BoxMesh_8i07t"]
+size = Vector3(0.08, 0.01, 0.1)
+
 [node name="Environment" type="Node3D"]
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
@@ -106,7 +117,7 @@ environment = SubResource("Environment_qqfux")
 fov = 90.0
 
 [node name="Arm" type="MeshInstance3D" parent="Camera"]
-transform = Transform3D(-0.390667, 0.131057, -0.283202, 0.312055, 0.165041, -0.354094, 0.000667125, -0.453415, -0.210746, -0.0463164, -0.0989131, -0.110178)
+transform = Transform3D(-0.456432, 0.131057, -0.156503, 0.194795, 0.165041, -0.429902, -0.061024, -0.453415, -0.201719, -0.0387205, -0.098966, -0.114008)
 material_override = ExtResource("6_iqfy1")
 mesh = SubResource("CapsuleMesh_8j0xg")
 skeleton = NodePath("../..")
@@ -130,7 +141,7 @@ mesh = SubResource("CapsuleMesh_8j0xg")
 skeleton = NodePath("../../..")
 
 [node name="Arm2" type="MeshInstance3D" parent="Camera"]
-transform = Transform3D(-0.382104, -0.127577, -0.296177, 0.288587, 0.0696696, -0.402323, 0.143923, -0.478404, 0.0203918, 0.033912, -0.0994735, -0.110417)
+transform = Transform3D(-0.382104, -0.127577, -0.296176, 0.288587, 0.0696696, -0.402323, 0.143923, -0.478404, 0.0203918, 0.041508, -0.0995264, -0.114248)
 material_override = ExtResource("6_iqfy1")
 mesh = SubResource("CapsuleMesh_8j0xg")
 skeleton = NodePath("../..")
@@ -187,5 +198,21 @@ direction = Vector3(0, 0, 0)
 spread = 0.0
 gravity = Vector3(0, 0, 0)
 color_initial_ramp = SubResource("Gradient_ojn2w")
+
+[node name="Ball" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.634039, -0.281448, -2.43011)
+material_override = ExtResource("7_8ksna")
+mesh = SubResource("SphereMesh_eon6x")
+
+[node name="Board" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.917553, 0.130349, -0.375639, -1.04308e-07, -0.944737, -0.327828, -0.397612, -0.3008, 0.866847, 0.556926, -0.311395, -2.2174)
+material_override = ExtResource("8_ll13h")
+mesh = SubResource("BoxMesh_8i07t")
+
+[node name="Board2" type="MeshInstance3D" parent="Board"]
+transform = Transform3D(1, -7.45058e-09, 0, 2.98023e-08, 1, -5.96046e-08, 0, -5.96046e-08, 1, 5.96046e-08, -0.0250483, 0.00320601)
+material_override = ExtResource("8_ll13h")
+mesh = SubResource("BoxMesh_8i07t")
+skeleton = NodePath("../..")
 
 [editable path="window"]

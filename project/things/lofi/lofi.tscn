@@ -24,6 +24,7 @@ size = Vector2i(180, 320)
 render_target_update_mode = 4
 
 [node name="Debug" type="Label" parent="."]
+visible = false
 layout_mode = 2
 theme = ExtResource("1_41ps2")
 theme_override_font_sizes/font_size = 16
