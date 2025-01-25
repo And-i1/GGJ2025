@@ -5,6 +5,9 @@
 [resource]
 diffuse_mode = 3
 specular_mode = 1
+disable_ambient_light = true
+disable_fog = true
 albedo_texture = ExtResource("1_yx11p")
+emission_enabled = true
 uv1_triplanar = true
 texture_filter = 0

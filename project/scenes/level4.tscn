@@ -188,3 +188,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.8680
 [node name="Ball3D" parent="SubViewportContainer/SubViewport/gyro" instance=ExtResource("3_jjhcj")]
 
 [node name="DirectionalLight3D" parent="SubViewportContainer/SubViewport/gyro" instance=ExtResource("6_4ydq8")]
+light_intensity_lux = 10.0
+light_energy = 1.0
+shadow_opacity = 0.75
