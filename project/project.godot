@@ -15,6 +15,7 @@ run/main_scene="res://scenes/level1.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://textures/icon.svg"
+config/bg_color=Color(0, 0, 0, 1)
 
 [display]
 
