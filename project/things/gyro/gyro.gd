@@ -24,7 +24,7 @@ func on_device_orientation(args) -> void:
 	var xx = curve.sample(x/180)
 	var yy = curve.sample(y/180)
 	$Plane.rotation_degrees = Vector3(xx, 0, yy)
-	$Ball3D.translate(Vector3(0,($Plane.global_position - $Ball3D.global_position)*(xx+yy),0))
+	$Ball3D.translate(Vector3(0,(($Plane.global_position - $Ball3D.global_position)*(xx+yy))+2,0))
 	#$Debug.text = "x = {}\ny = {}".format(["%.2f" % xx, "%.2f" % yy], "{}")
 	
 
