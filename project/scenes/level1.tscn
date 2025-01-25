@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c1sl6wanw55q1" path="res://scenes/ball_3d.tscn" id="2_f0img"]
 [ext_resource type="PackedScene" uid="uid://ciix271un82cs" path="res://scenes/objective.tscn" id="3_0qren"]
 [ext_resource type="Script" path="res://things/scripts/followcamera.gd" id="3_axv67"]
-[ext_resource type="PackedScene" uid="uid://bl1pqysyx5b47" path="res://things/gyro/gyro.tscn" id="4_nf75n"]
+[ext_resource type="PackedScene" uid="uid://cdl5b5migytvo" path="res://scenes/level2.tscn" id="4_4suig"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_p0k7j"]
 size = Vector2(7, 7)
@@ -58,7 +58,7 @@ mesh = SubResource("BoxMesh_5cta2")
 
 [node name="Objective" parent="Plane" instance=ExtResource("3_0qren")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 0.01, 0)
-scn = ExtResource("4_nf75n")
+scn = ExtResource("4_4suig")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 0, 3, 0)
