@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://things/lofi/lofi.gd" id="1_umote"]
 [ext_resource type="Script" path="res://things/gyro/gyro.gd" id="2_xy0c3"]
 [ext_resource type="PackedScene" uid="uid://c1sl6wanw55q1" path="res://scenes/ball_3d.tscn" id="3_jjhcj"]
+[ext_resource type="Material" uid="uid://dc71p1qyavxux" path="res://textures/obstacle.mat.tres" id="4_1ds4h"]
 [ext_resource type="PackedScene" uid="uid://ciix271un82cs" path="res://scenes/objective.tscn" id="4_aecl4"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_h6whp"]
@@ -29,11 +30,9 @@ size = Vector3(5, 5, 6)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_40qsw"]
 data = PackedVector3Array(-2.5, 2.5, 3, 2.5, 2.5, 3, -2.5, -2.5, 3, 2.5, 2.5, 3, 2.5, -2.5, 3, -2.5, -2.5, 3, 2.5, 2.5, -3, -2.5, 2.5, -3, 2.5, -2.5, -3, -2.5, 2.5, -3, -2.5, -2.5, -3, 2.5, -2.5, -3, 2.5, 2.5, 3, 2.5, 2.5, -3, 2.5, -2.5, 3, 2.5, 2.5, -3, 2.5, -2.5, -3, 2.5, -2.5, 3, -2.5, 2.5, -3, -2.5, 2.5, 3, -2.5, -2.5, -3, -2.5, 2.5, 3, -2.5, -2.5, 3, -2.5, -2.5, -3, 2.5, 2.5, 3, -2.5, 2.5, 3, 2.5, 2.5, -3, -2.5, 2.5, 3, -2.5, 2.5, -3, 2.5, 2.5, -3, -2.5, -2.5, 3, 2.5, -2.5, 3, -2.5, -2.5, -3, 2.5, -2.5, 3, 2.5, -2.5, -3, -2.5, -2.5, -3)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4lmet"]
-albedo_color = Color(0, 9.62615e-08, 0.423247, 1)
-
 [sub_resource type="BoxMesh" id="BoxMesh_vw5ia"]
-material = SubResource("StandardMaterial3D_4lmet")
+lightmap_size_hint = Vector2i(34, 46)
+material = ExtResource("4_1ds4h")
 size = Vector3(2, 2, 4)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_c6cdb"]
@@ -68,7 +67,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 5, 10),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.5, -6, 0), Vector3(-0.5, 1.35, 0), Vector3(-0.5, -6, 0)]
+"values": [Vector3(0, -6, 0), Vector3(0, 1.35, 0), Vector3(0, -6, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_00elv"]
