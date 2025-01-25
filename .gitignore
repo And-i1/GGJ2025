@@ -8,3 +8,4 @@ build.zip
 .task
 .DS_store
 rmfolder/
+out/
