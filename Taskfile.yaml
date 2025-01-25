@@ -49,4 +49,7 @@ tasks:
       - rm -rf build/*
   record:
     cmds:
+      - rm -rf out
+      - mkdir -p out
       - $GODOT --path project --write-movie ../out/frame.png --fixed-fps 30 --resolution 630x500 scenes/resolution-test.tscn --quit-after 120
+      - gifski -o out/file.gif out/frame*.png
