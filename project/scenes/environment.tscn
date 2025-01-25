@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://s4ptgmg40s5m"]
+[gd_scene load_steps=8 format=3 uid="uid://s4ptgmg40s5m"]
 
 [ext_resource type="Material" uid="uid://cvaiqjxbv0eua" path="res://textures/spaceship.mat.tres" id="1_rno14"]
 [ext_resource type="Material" uid="uid://bbele0sjw2qhx" path="res://textures/spaceship_floor.mat.tres" id="2_1f3sg"]
+[ext_resource type="PackedScene" uid="uid://cnvs5t8ev13i3" path="res://models/window.glb" id="3_rjvk4"]
+[ext_resource type="Material" uid="uid://xv17yqujfok3" path="res://textures/window.mat.tres" id="4_mxc2u"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_dp5a1"]
 inner_radius = 2.0
@@ -13,6 +15,7 @@ ring_segments = 8
 size = Vector2(10, 10)
 
 [sub_resource type="Environment" id="Environment_qqfux"]
+resource_local_to_scene = true
 background_mode = 1
 background_color = Color(0.0901961, 0.0862745, 0.14902, 1)
 
@@ -37,3 +40,12 @@ mesh = SubResource("PlaneMesh_n6t3q")
 transform = Transform3D(0.920547, -0.00586839, -0.390587, 0.00620714, 0.999981, -0.000395072, 0.390582, -0.00206076, 0.920566, 0.486515, -0.235912, -2.05235)
 environment = SubResource("Environment_qqfux")
 fov = 90.0
+
+[node name="window" parent="." instance=ExtResource("3_rjvk4")]
+transform = Transform3D(0.799157, -0.38531, 0.461394, 0.5, -5.96046e-08, -0.866025, 0.333688, 0.922787, 0.192655, 1.3113, 0, -4.10583)
+
+[node name="Circle" parent="window" index="0"]
+transform = Transform3D(1, -0.000952244, -2.90573e-07, 0.000952184, 1, 0.000549749, -2.75671e-07, -0.000549793, 1, 0.0227447, 0.0230675, 0.0131316)
+material_override = ExtResource("4_mxc2u")
+
+[editable path="window"]
