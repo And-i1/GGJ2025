@@ -120,7 +120,7 @@
 
     <script src="index.js"></script>
     <script>
-        const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":720160,"index.wasm":35376909},"focusCanvas":true,"gdextensionLibs":[]};
+        const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":720176,"index.wasm":35376909},"focusCanvas":true,"gdextensionLibs":[]};
         const GODOT_THREADS_ENABLED = false;
         const engine = new Engine(GODOT_CONFIG);
 
@@ -267,6 +267,10 @@
                     btn.addEventListener("click", (event) => { requestDeviceOrientationPermission() });
                 }
                 else {
+                    if (typeof navigator.wakeLock !== 'undefined' && typeof navigator.request !== 'undefined') {
+                        navigator.wakeLock.request("screen")
+                        .then(x => { console.log("Wake lock aquired")});
+                    }
                     btn.remove();
                     setStatusMode('progress');
                     engine.startGame({
