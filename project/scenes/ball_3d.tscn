@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1sl6wanw55q1"]
+[gd_scene load_steps=5 format=3 uid="uid://c1sl6wanw55q1"]
 
 [ext_resource type="Script" path="res://things/scripts/ball_3d.gd" id="1_dxmws"]
 
@@ -8,6 +8,9 @@ radius = 0.2
 [sub_resource type="SphereMesh" id="SphereMesh_tcchl"]
 radius = 0.2
 height = 0.4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a4qvn"]
+size = Vector3(0.5, 0.5, 0.5)
 
 [node name="Ball3D" type="RigidBody3D"]
 script = ExtResource("1_dxmws")
@@ -25,3 +28,8 @@ top_level = true
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 0, 3, 0)
 current = true
+
+[node name="ball" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ball"]
+shape = SubResource("BoxShape3D_a4qvn")
