@@ -50,7 +50,7 @@ data = PackedVector3Array(-0.25, 2.5, 0.75, 0.25, 2.5, 0.75, -0.25, -2.5, 0.75, 
 script = ExtResource("1_mp6q1")
 
 [node name="Plane" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, -1, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Plane"]
 transform = Transform3D(1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, 0, 2)
