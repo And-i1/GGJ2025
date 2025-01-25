@@ -35,6 +35,9 @@ func _input(event):
 		add_child(ball, true)
 
 
+
 func _on_area_3d_area_entered(area):
-	if "ball" in area.name:
-		ball.translate(-ball.global_position)
+	if ball != null:
+		ball.queue_free()
+	ball = scn.instantiate()
+	add_child(ball, true)
