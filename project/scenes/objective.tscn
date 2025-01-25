@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://ciix271un82cs"]
+
+[ext_resource type="Script" path="res://things/scripts/objective.gd" id="1_5tq5x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02he5"]
+albedo_color = Color(0.54502, 0.762156, 0.380369, 1)
+emission_enabled = true
+emission = Color(0.459693, 0.913618, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cfrt0"]
+material = SubResource("StandardMaterial3D_02he5")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_w6fk8"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[node name="Objective" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+mesh = SubResource("PlaneMesh_cfrt0")
+script = ExtResource("1_5tq5x")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("ConcavePolygonShape3D_w6fk8")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
