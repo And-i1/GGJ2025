@@ -3,7 +3,7 @@ extends Node
 var _dev_orientation 
 var curve = load("res://things/curve/new_curve.tres")
 @export var scn : PackedScene
-@onready var ball = $BallSpawn/Ball3D
+@onready var ball = $Ball3D
 
 func _ready() -> void:
 	if OS.get_name() == "Web":
@@ -24,7 +24,7 @@ func on_device_orientation(args) -> void:
 	var xx = curve.sample(x/180)
 	var yy = curve.sample(y/180)
 	$Plane.rotation_degrees = Vector3(xx, 0, yy)
-	
+	$Ball3D.translate(Vector3($Ball3D.global_position.x * (yy+30) - $Plane.global_position.x * (yy+30)))
 	#$Debug.text = "x = {}\ny = {}".format(["%.2f" % xx, "%.2f" % yy], "{}")
 	
 
@@ -33,4 +33,4 @@ func _input(event):
 		if ball != null:
 			ball.queue_free()
 		ball = scn.instantiate()
-		$BallSpawn.add_child(ball, true)
+		add_child(ball, true)
