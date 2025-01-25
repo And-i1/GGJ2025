@@ -10,8 +10,8 @@
 [sub_resource type="PlaneMesh" id="PlaneMesh_ecp5v"]
 size = Vector2(10, 4)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bb3j6"]
-data = PackedVector3Array(5, 0, 2, -5, 0, 2, 5, 0, -2, -5, 0, 2, -5, 0, -2, 5, 0, -2)
+[sub_resource type="BoxShape3D" id="BoxShape3D_dfe7k"]
+size = Vector3(10, 0.2, 4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_tgxy1"]
 size = Vector3(10, 2, 0.5)
@@ -88,7 +88,8 @@ mesh = SubResource("PlaneMesh_ecp5v")
 [node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_bb3j6")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+shape = SubResource("BoxShape3D_dfe7k")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/gyro/Plane"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.40909, 1, 2.43182)
