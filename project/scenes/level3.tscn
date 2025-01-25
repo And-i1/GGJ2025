@@ -165,6 +165,8 @@ skeleton = NodePath("../MeshInstance3D3")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/gyro"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
 
+[node name="BallSpawn" type="Marker3D" parent="SubViewportContainer/SubViewport/gyro"]
+
 [node name="Debug" type="Label" parent="SubViewportContainer"]
 layout_mode = 2
 theme = ExtResource("5_sv11m")
