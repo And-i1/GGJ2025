@@ -10,6 +10,8 @@ func _ready() -> void:
 		var window = JavaScriptBridge.get_interface("window")
 		_dev_orientation = JavaScriptBridge.create_callback(on_device_orientation)
 		window.ondeviceorientation = _dev_orientation
+	ball = scn.instantiate()
+	add_child(ball, true)
 	
 func on_device_orientation(args) -> void:
 	var rot = args[0]
