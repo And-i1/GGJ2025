@@ -6,7 +6,7 @@ var curve = load("res://things/curve/new_curve.tres")
 var ball = null
 
 func _ready() -> void:
-	#if OS.get_name() == "Web":
+	if OS.get_name() == "Web":
 		var window = JavaScriptBridge.get_interface("window")
 		_dev_orientation = JavaScriptBridge.create_callback(on_device_orientation)
 		window.ondeviceorientation = _dev_orientation
