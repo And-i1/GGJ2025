@@ -265,6 +265,10 @@
                     btn.addEventListener("click", (event) => { requestDeviceOrientationPermission() });
                 }
                 else {
+                    if (typeof navigator.wakeLock !== 'undefined' && typeof navigator.request !== 'undefined') {
+                        navigator.wakeLock.request("screen")
+                        .then(x => { console.log("Wake lock aquired")});
+                    }
                     btn.remove();
                     setStatusMode('progress');
                     engine.startGame({
