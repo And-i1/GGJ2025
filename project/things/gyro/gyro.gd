@@ -37,4 +37,4 @@ func _input(event):
 
 func _on_area_3d_area_entered(area):
 	if "ball" in area.name:
-		ball.translate(Vector3(0,5,0))
+		ball.translate(-ball.global_position)
