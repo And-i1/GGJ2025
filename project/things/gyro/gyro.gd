@@ -4,7 +4,7 @@ var _dev_orientation
 var curve = load("res://things/curve/new_curve.tres")
 @export var scn : PackedScene
 @onready var ball = $Ball3D
-var rotationobjective
+var rotationobjective = Vector3.ZERO
 
 func _ready() -> void:
 	if OS.get_name() == "Web":
