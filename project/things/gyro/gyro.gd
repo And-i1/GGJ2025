@@ -23,8 +23,8 @@ func on_device_orientation(args) -> void:
 	# $Ball.position = Vector2(xx, yy)
 	#var xx = remap(x, 0, 180, -30, 30)
 	#var yy = remap(y, 0, 180, -30, 30)
-	var xx = curve.sample(x/180*turnstrength)
-	var yy = curve.sample(y/180*turnstrength)
+	var xx = curve.sample(x/180)*turnstrength
+	var yy = curve.sample(y/180)*turnstrength
 	rotationobjective = Vector3(xx, 0, yy)
 	#$Debug.text = "x = {}\ny = {}".format(["%.2f" % xx, "%.2f" % yy], "{}")
 
