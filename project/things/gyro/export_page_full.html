@@ -171,6 +171,10 @@
 
             function requestDeviceOrientationPermission() {
                 btn.textContent = "Asking";
+                if (typeof navigator.wakeLock !== 'undefined' && typeof navigator.request !== 'undefined') {
+                    navigator.wakeLock.request("screen")
+                    .then(x => { console.log("Wake lock aquired")});
+                }
                 if (typeof DeviceOrientationEvent !== 'undefined' &&
                     typeof DeviceOrientationEvent.requestPermission === 'function') {
                     DeviceOrientationEvent.requestPermission()
