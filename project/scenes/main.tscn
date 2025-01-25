@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bkdcg0jlo5iq4"]
 
 [ext_resource type="PackedScene" uid="uid://ogb8ulbb722r" path="res://things/lofi/lofi.tscn" id="1_p0ptt"]
-[ext_resource type="PackedScene" path="res://scenes/level1.tscn" id="2_a4bq0"]
+[ext_resource type="PackedScene" uid="uid://uqy20m4t3e50" path="res://scenes/level1.tscn" id="2_a4bq0"]
 
 [node name="Node" type="Node"]
 
