@@ -23,8 +23,9 @@ window/handheld/orientation=1
 
 [physics]
 
-common/physics_jitter_fix=0.0
-common/physics_interpolation=true
+common/physics_ticks_per_second=300
+common/max_physics_steps_per_frame=50
+common/solver/solver_iterations=200
 
 [rendering]
 
