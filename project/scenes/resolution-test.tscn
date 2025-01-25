@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://d3agday6jn8jl"]
+[gd_scene load_steps=13 format=3 uid="uid://d3agday6jn8jl"]
 
 [ext_resource type="PackedScene" uid="uid://ogb8ulbb722r" path="res://things/lofi/lofi.tscn" id="1_7elyo"]
+[ext_resource type="Script" path="res://scripts/resolution_test.gd" id="1_mlyiw"]
 [ext_resource type="PackedScene" uid="uid://s4ptgmg40s5m" path="res://scenes/environment.tscn" id="2_pcr1h"]
 [ext_resource type="Material" uid="uid://8gt67ad7j53l" path="res://textures/planet.mat.tres" id="5_l7twu"]
 [ext_resource type="PackedScene" uid="uid://cxwofyvwkvplh" path="res://things/fps-counter/fps-counter.tscn" id="6_2rawv"]
@@ -62,6 +63,7 @@ offsets = PackedFloat32Array(0, 0.540625)
 colors = PackedColorArray(0.992157, 0.894118, 0.356863, 1, 1, 1, 1, 1)
 
 [node name="Resolution-test" type="Node"]
+script = ExtResource("1_mlyiw")
 
 [node name="BG" type="ColorRect" parent="."]
 anchors_preset = 15

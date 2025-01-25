@@ -37,7 +37,7 @@ material_override = ExtResource("2_1f3sg")
 mesh = SubResource("PlaneMesh_n6t3q")
 
 [node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(0.920547, -0.00586839, -0.390587, 0.00620714, 0.999981, -0.000395072, 0.390582, -0.00206076, 0.920566, 0.486515, -0.235912, -2.05235)
+transform = Transform3D(0.920482, -0.00642629, -0.390731, 0.00698126, 0.999976, 0, 0.390721, -0.0027278, 0.920505, 0.486515, -0.235912, -2.05235)
 environment = SubResource("Environment_qqfux")
 fov = 90.0
 
