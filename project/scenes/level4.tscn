@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://bto38hovv4m70"]
+[gd_scene load_steps=20 format=3 uid="uid://bto38hovv4m70"]
 
 [ext_resource type="Script" path="res://things/lofi/lofi.gd" id="1_umote"]
 [ext_resource type="Script" path="res://things/gyro/gyro.gd" id="2_xy0c3"]
 [ext_resource type="PackedScene" uid="uid://c1sl6wanw55q1" path="res://scenes/ball_3d.tscn" id="3_jjhcj"]
 [ext_resource type="PackedScene" uid="uid://ciix271un82cs" path="res://scenes/objective.tscn" id="4_aecl4"]
 [ext_resource type="Theme" uid="uid://dwoio8l8rva2v" path="res://theme/default.theme.tres" id="4_i8vot"]
+[ext_resource type="PackedScene" uid="uid://dsnbtbdrscqxe" path="res://scenes/level5.tscn" id="5_mu3ii"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_h6whp"]
 size = Vector2(6, 6)
@@ -47,10 +48,10 @@ tracks/0/path = NodePath("MeshInstance3D7:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 5, 10),
+"times": PackedFloat32Array(0, 4.96667, 10),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-2, -1, 0), Vector3(-2, 5.25, 0), Vector3(-2, -1, 0)]
+"values": [Vector3(0, -6, 0), Vector3(0, 1.35, 0), Vector3(0, 6, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_wq4hv"]
@@ -101,9 +102,10 @@ script = ExtResource("2_xy0c3")
 scn = ExtResource("3_jjhcj")
 
 [node name="Plane" type="Node3D" parent="SubViewportContainer/SubViewport/gyro"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.149, 3, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/gyro/Plane"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.13193, -3.87556, 2.56703e-07)
 mesh = SubResource("PlaneMesh_h6whp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D"]
@@ -113,7 +115,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_177xi")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/gyro/Plane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25, 5, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.38193, 1.12444, 5.40828e-07)
 mesh = SubResource("BoxMesh_7qfn6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D2"]
@@ -122,7 +124,7 @@ mesh = SubResource("BoxMesh_7qfn6")
 shape = SubResource("ConcavePolygonShape3D_gtcw3")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/gyro/Plane"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.5, 5, -3.25)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.368073, 1.12444, 3.25)
 mesh = SubResource("BoxMesh_brrmw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D5"]
@@ -131,7 +133,7 @@ mesh = SubResource("BoxMesh_brrmw")
 shape = SubResource("ConcavePolygonShape3D_4n0jd")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/gyro/Plane"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.5, 5, 3.25)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.368072, 1.12444, -3.25)
 mesh = SubResource("BoxMesh_brrmw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D6"]
@@ -140,7 +142,7 @@ mesh = SubResource("BoxMesh_brrmw")
 shape = SubResource("ConcavePolygonShape3D_4n0jd")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/gyro/Plane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25, 5, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.11807, 1.12444, -4.64534e-07)
 mesh = SubResource("BoxMesh_7qfn6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D4"]
@@ -149,7 +151,7 @@ mesh = SubResource("BoxMesh_7qfn6")
 shape = SubResource("ConcavePolygonShape3D_gtcw3")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/gyro/Plane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 2.5, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.36807, -1.37556, -2.24122e-07)
 mesh = SubResource("BoxMesh_5jucx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D3"]
@@ -158,7 +160,7 @@ mesh = SubResource("BoxMesh_5jucx")
 shape = SubResource("ConcavePolygonShape3D_40qsw")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/gyro/Plane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -0.5, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, -0.5, 0)
 mesh = SubResource("BoxMesh_vw5ia")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D7"]
@@ -173,7 +175,8 @@ libraries = {
 autoplay = "updown"
 
 [node name="Objective" parent="SubViewportContainer/SubViewport/gyro/Plane" instance=ExtResource("4_aecl4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 5.01, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.86807, 1.13445, -2.67833e-07)
+scn = ExtResource("5_mu3ii")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/gyro"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
