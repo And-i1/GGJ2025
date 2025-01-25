@@ -11,6 +11,7 @@
 size = Vector2(10, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dfe7k"]
+margin = 0.0
 size = Vector3(11, 1, 5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_tgxy1"]
