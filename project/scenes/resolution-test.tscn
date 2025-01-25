@@ -1,8 +1,11 @@
-[gd_scene format=3 uid="uid://ce3n1r0iggsrg"]
+[gd_scene load_steps=2 format=3 uid="uid://ce3n1r0iggsrg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ajlsk"]
 
 [node name="Resolution-test" type="Node"]
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -22,9 +25,37 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0, 0, 1)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+texture_repeat = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(16, 16)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(64, 64)
+render_target_update_mode = 4
+
+[node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport"]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(0.82806, 0, 0.560639, 0, 1, 0, -0.560639, 0, 0.82806, 1.22, 0, 1.694)
+current = true
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(0.343414, -0.802281, 0.488274, 0, 0.519892, 0.854232, -0.939184, -0.293355, 0.178538, 0, 0, 0)
+mesh = SubResource("BoxMesh_ajlsk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Node3D"]
