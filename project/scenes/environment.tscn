@@ -106,7 +106,7 @@ environment = SubResource("Environment_qqfux")
 fov = 90.0
 
 [node name="Arm" type="MeshInstance3D" parent="Camera"]
-transform = Transform3D(0.486064, 0.0567748, 0.10256, -0.107806, 0.388305, 0.295969, -0.0460419, -0.309832, 0.389723, -0.0463166, -0.0989134, -0.110178)
+transform = Transform3D(-0.390667, 0.131057, -0.283202, 0.312055, 0.165041, -0.354094, 0.000667125, -0.453415, -0.210746, -0.0463164, -0.0989131, -0.110178)
 material_override = ExtResource("6_iqfy1")
 mesh = SubResource("CapsuleMesh_8j0xg")
 skeleton = NodePath("../..")
@@ -130,7 +130,7 @@ mesh = SubResource("CapsuleMesh_8j0xg")
 skeleton = NodePath("../../..")
 
 [node name="Arm2" type="MeshInstance3D" parent="Camera"]
-transform = Transform3D(-0.403248, -0.0283789, -0.294254, 0.288735, 0.0689771, -0.402336, 0.0634294, -0.494405, -0.0392419, 0.033912, -0.0994735, -0.110417)
+transform = Transform3D(-0.382104, -0.127577, -0.296177, 0.288587, 0.0696696, -0.402323, 0.143923, -0.478404, 0.0203918, 0.033912, -0.0994735, -0.110417)
 material_override = ExtResource("6_iqfy1")
 mesh = SubResource("CapsuleMesh_8j0xg")
 skeleton = NodePath("../..")
