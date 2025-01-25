@@ -1,9 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkdcg0jlo5iq4"]
+[gd_scene load_steps=3 format=3 uid="uid://bkdcg0jlo5iq4"]
 
-[ext_resource type="Texture2D" uid="uid://2goec6inia8f" path="res://textures/icon.svg" id="1_o1k52"]
+[ext_resource type="PackedScene" uid="uid://ogb8ulbb722r" path="res://things/lofi/lofi.tscn" id="1_p0ptt"]
+[ext_resource type="PackedScene" path="res://scenes/level1.tscn" id="2_a4bq0"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node" type="Node"]
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(154, 145)
-texture = ExtResource("1_o1k52")
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0825849, 0.100351, 0.180904, 1)
+
+[node name="SubViewportContainer" parent="." instance=ExtResource("1_p0ptt")]
+
+[node name="gyro" parent="SubViewportContainer/SubViewport" index="0" instance=ExtResource("2_a4bq0")]
+
+[editable path="SubViewportContainer"]

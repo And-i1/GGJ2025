@@ -1,13 +1,15 @@
 extends Node
 
-var _dev_orientation = JavaScriptBridge.create_callback(on_device_orientation)
+var _dev_orientation 
 var curve = load("res://things/curve/new_curve.tres")
 @export var scn : PackedScene
 var ball = null
 
 func _ready() -> void:
-	var window = JavaScriptBridge.get_interface("window")
-	window.ondeviceorientation = _dev_orientation
+	if OS.get_name() == "HTML5":
+		var window = JavaScriptBridge.get_interface("window")
+		_dev_orientation = JavaScriptBridge.create_callback(on_device_orientation)
+		window.ondeviceorientation = _dev_orientation
 	
 func on_device_orientation(args) -> void:
 	var rot = args[0]
