@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://uqy20m4t3e50"]
+[gd_scene load_steps=18 format=3 uid="uid://uqy20m4t3e50"]
 
 [ext_resource type="Script" path="res://things/gyro/gyro.gd" id="1_6witg"]
 [ext_resource type="Script" path="res://things/lofi/lofi.gd" id="1_ympjb"]
@@ -36,6 +36,8 @@ size = Vector3(4, 2, 0.5)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3eu8k"]
 data = PackedVector3Array(-2, 1, 0.25, 2, 1, 0.25, -2, -1, 0.25, 2, 1, 0.25, 2, -1, 0.25, -2, -1, 0.25, 2, 1, -0.25, -2, 1, -0.25, 2, -1, -0.25, -2, 1, -0.25, -2, -1, -0.25, 2, -1, -0.25, 2, 1, 0.25, 2, 1, -0.25, 2, -1, 0.25, 2, 1, -0.25, 2, -1, -0.25, 2, -1, 0.25, -2, 1, -0.25, -2, 1, 0.25, -2, -1, -0.25, -2, 1, 0.25, -2, -1, 0.25, -2, -1, -0.25, 2, 1, 0.25, -2, 1, 0.25, 2, 1, -0.25, -2, 1, 0.25, -2, 1, -0.25, 2, 1, -0.25, -2, -1, 0.25, 2, -1, 0.25, -2, -1, -0.25, 2, -1, 0.25, 2, -1, -0.25, -2, -1, -0.25)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_3p3my"]
 
 [node name="Node" type="Node"]
 
@@ -128,8 +130,16 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10,
 
 [node name="Ball3D" parent="SubViewportContainer/SubViewport/gyro" instance=ExtResource("2_f0img")]
 
+[node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/gyro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/gyro/Area3D"]
+shape = SubResource("WorldBoundaryShape3D_3p3my")
+
 [node name="Debug" type="Label" parent="SubViewportContainer"]
 layout_mode = 2
 theme = ExtResource("6_g8fov")
 theme_override_font_sizes/font_size = 16
 text = "test"
+
+[connection signal="area_entered" from="SubViewportContainer/SubViewport/gyro/Area3D" to="SubViewportContainer/SubViewport/gyro" method="_on_area_3d_area_entered"]

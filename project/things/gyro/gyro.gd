@@ -33,3 +33,8 @@ func _input(event):
 			ball.queue_free()
 		ball = scn.instantiate()
 		add_child(ball, true)
+
+
+func _on_area_3d_area_entered(area):
+	if "ball" in area.name:
+		ball.translate(Vector3(0,5,0))
