@@ -168,5 +168,7 @@ scn = ExtResource("5_n6j4a")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/gyro"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
+light_intensity_lux = 100000.0
+light_temperature = 6500.0
 
 [node name="Ball3D" parent="SubViewportContainer/SubViewport/gyro" instance=ExtResource("2_1nvu3")]
