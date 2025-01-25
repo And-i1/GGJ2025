@@ -23,6 +23,12 @@ size = Vector2(10, 10)
 resource_local_to_scene = true
 background_mode = 1
 background_color = Color(0.0901961, 0.0862745, 0.14902, 1)
+background_energy_multiplier = 0.25
+ambient_light_source = 1
+reflected_light_source = 1
+glow_enabled = true
+glow_bloom = 0.43
+glow_hdr_threshold = 4.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8j0xg"]
 radius = 0.026
@@ -93,7 +99,7 @@ radial_segments = 8
 rings = 8
 
 [sub_resource type="BoxMesh" id="BoxMesh_8i07t"]
-size = Vector3(0.08, 0.01, 0.1)
+size = Vector3(0.055, 0.01, 0.1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_oyv1w"]
 size = Vector3(0.01, 0.01, 0.01)
@@ -197,7 +203,7 @@ preprocess = 600.0
 speed_scale = 20.1
 mesh = SubResource("PointMesh_c45y2")
 emission_shape = 3
-emission_box_extents = Vector3(7, 7, 5)
+emission_box_extents = Vector3(7, 7, 7)
 direction = Vector3(0, 0, 0)
 spread = 0.0
 gravity = Vector3(0, 0, 0)
@@ -210,8 +216,7 @@ material_override = ExtResource("7_8ksna")
 mesh = SubResource("SphereMesh_eon6x")
 
 [node name="Board" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.917553, 0.130349, -0.375639, -1.04308e-07, -0.944737, -0.327828, -0.397612, -0.3008, 0.866847, 0.556926, -0.311395, -2.2174)
-visible = false
+transform = Transform3D(-0.917553, 0.130349, -0.375639, -1.04308e-07, -0.944737, -0.327828, -0.397612, -0.3008, 0.866847, 0.553517, -0.31437, -2.20953)
 material_override = ExtResource("8_ll13h")
 mesh = SubResource("BoxMesh_8i07t")
 
