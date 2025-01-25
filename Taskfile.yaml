@@ -41,8 +41,8 @@ tasks:
       - git -C rmfolder add .
       - git -C rmfolder commit -m "New version"
       - git -C rmfolder push origin gh-pages
-    deps:
-      - export
+    # deps:
+    #   - export
   clear:
     cmds:
       - rm -rf build/*
