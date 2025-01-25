@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://uqy20m4t3e50"]
+
+[ext_resource type="Script" path="res://things/gyro/gyro.gd" id="1_6witg"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p0k7j"]
+size = Vector2(12, 12)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sb8ti"]
+data = PackedVector3Array(6, 0, 6, -6, 0, 6, 6, 0, -6, -6, 0, 6, -6, 0, -6, 6, 0, -6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_b631a"]
+size = Vector3(14, 3, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_snt46"]
+data = PackedVector3Array(-7, 1.5, 0.5, 7, 1.5, 0.5, -7, -1.5, 0.5, 7, 1.5, 0.5, 7, -1.5, 0.5, -7, -1.5, 0.5, 7, 1.5, -0.5, -7, 1.5, -0.5, 7, -1.5, -0.5, -7, 1.5, -0.5, -7, -1.5, -0.5, 7, -1.5, -0.5, 7, 1.5, 0.5, 7, 1.5, -0.5, 7, -1.5, 0.5, 7, 1.5, -0.5, 7, -1.5, -0.5, 7, -1.5, 0.5, -7, 1.5, -0.5, -7, 1.5, 0.5, -7, -1.5, -0.5, -7, 1.5, 0.5, -7, -1.5, 0.5, -7, -1.5, -0.5, 7, 1.5, 0.5, -7, 1.5, 0.5, 7, 1.5, -0.5, -7, 1.5, 0.5, -7, 1.5, -0.5, 7, 1.5, -0.5, -7, -1.5, 0.5, 7, -1.5, 0.5, -7, -1.5, -0.5, 7, -1.5, 0.5, 7, -1.5, -0.5, -7, -1.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ekfpr"]
+size = Vector3(12, 3, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_674ce"]
+data = PackedVector3Array(-6, 1.5, 0.5, 6, 1.5, 0.5, -6, -1.5, 0.5, 6, 1.5, 0.5, 6, -1.5, 0.5, -6, -1.5, 0.5, 6, 1.5, -0.5, -6, 1.5, -0.5, 6, -1.5, -0.5, -6, 1.5, -0.5, -6, -1.5, -0.5, 6, -1.5, -0.5, 6, 1.5, 0.5, 6, 1.5, -0.5, 6, -1.5, 0.5, 6, 1.5, -0.5, 6, -1.5, -0.5, 6, -1.5, 0.5, -6, 1.5, -0.5, -6, 1.5, 0.5, -6, -1.5, -0.5, -6, 1.5, 0.5, -6, -1.5, 0.5, -6, -1.5, -0.5, 6, 1.5, 0.5, -6, 1.5, 0.5, 6, 1.5, -0.5, -6, 1.5, 0.5, -6, 1.5, -0.5, 6, 1.5, -0.5, -6, -1.5, 0.5, 6, -1.5, 0.5, -6, -1.5, -0.5, 6, -1.5, 0.5, 6, -1.5, -0.5, -6, -1.5, -0.5)
+
+[node name="gyro" type="Node"]
+script = ExtResource("1_6witg")
+
+[node name="Plane" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Plane"]
+mesh = SubResource("PlaneMesh_p0k7j")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_sb8ti")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Plane"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -6.5)
+mesh = SubResource("BoxMesh_b631a")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_snt46")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Plane"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 6.5)
+mesh = SubResource("BoxMesh_b631a")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_snt46")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Plane"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.5, 1.5, 0)
+mesh = SubResource("BoxMesh_ekfpr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_674ce")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Plane"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.5, 1.5, 0)
+mesh = SubResource("BoxMesh_ekfpr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_674ce")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 0, 6, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
