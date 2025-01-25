@@ -1,9 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ogb8ulbb722r"]
+[gd_scene load_steps=3 format=3 uid="uid://ogb8ulbb722r"]
 
 [ext_resource type="Theme" uid="uid://dwoio8l8rva2v" path="res://theme/default.theme.tres" id="1_41ps2"]
 [ext_resource type="Script" path="res://things/lofi/lofi.gd" id="1_tt20j"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_eq4pl"]
 
 [node name="SubViewportContainer" type="SubViewportContainer"]
 texture_filter = 1
@@ -25,20 +23,8 @@ handle_input_locally = false
 size = Vector2i(180, 320)
 render_target_update_mode = 4
 
-[node name="Node3D" type="Node3D" parent="SubViewport"]
-
-[node name="Camera3D" type="Camera3D" parent="SubViewport/Node3D"]
-transform = Transform3D(0.828021, -0.0982023, 0.55203, 0, 0.984543, 0.175143, -0.560697, -0.145022, 0.815223, 0.906164, 0.409567, 1.39001)
-current = true
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewport/Node3D"]
-transform = Transform3D(0.343414, -0.802281, 0.488274, 0, 0.519892, 0.854232, -0.939184, -0.293355, 0.178538, 0, 0, 0)
-mesh = SubResource("BoxMesh_eq4pl")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport/Node3D"]
-
 [node name="Debug" type="Label" parent="."]
 layout_mode = 2
 theme = ExtResource("1_41ps2")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 16
 text = "test"

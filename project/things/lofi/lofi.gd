@@ -10,6 +10,5 @@ func _process(_delta: float) -> void:
 	size = Vector2(basis * min_factor)
 	position = (Vector2(vsize) - size) / 2
 	scale = Vector2(min_factor, min_factor)
-	print("{}x{} - {}\n\n".format([vsize[0], vsize[1], min_factor], "{}"))
 	$SubViewport.size = basis
-	$Debug.text = "{}x{} - {}\n\n".format([vsize[0], vsize[1], min_factor], "{}")
+	$Debug.text = "{}x{}\n{}x{}".format([vsize[0], vsize[1], size[0], size[1]], "{}")
