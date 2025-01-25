@@ -3,6 +3,7 @@ extends Node
 var _dev_orientation 
 var curve = load("res://things/curve/new_curve.tres")
 @export var scn : PackedScene
+@export var turnstrength : float = 1
 @onready var ball = $Ball3D
 var rotationobjective = Vector3.ZERO
 
@@ -28,7 +29,7 @@ func on_device_orientation(args) -> void:
 	#$Debug.text = "x = {}\ny = {}".format(["%.2f" % xx, "%.2f" % yy], "{}")
 
 func _physics_process(delta):
-	$Plane.rotation_degrees = Vector3(move_toward($Plane.rotation_degrees.x, rotationobjective.x, 1)/clamp($Plane.global_position.distance_to(ball.global_position)/10,1,2), 0, move_toward($Plane.rotation_degrees.z, rotationobjective.z, 1)/clamp($Plane.global_position.distance_to(ball.global_position)/10,1,2))
+	$Plane.rotation_degrees = Vector3(move_toward($Plane.rotation_degrees.x, rotationobjective.x, turnstrength)/clamp($Plane.global_position.distance_to(ball.global_position)/10,1,2), 0, move_toward($Plane.rotation_degrees.z, rotationobjective.z, turnstrength)/clamp($Plane.global_position.distance_to(ball.global_position)/10,1,2))
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
