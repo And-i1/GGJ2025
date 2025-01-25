@@ -30,6 +30,7 @@ color = Color(0.0901961, 0.0862745, 0.14902, 1)
 [node name="Environment" parent="SubViewportContainer/SubViewport" index="0" instance=ExtResource("2_pcr1h")]
 
 [node name="Fps-counter" parent="." instance=ExtResource("6_2rawv")]
+visible = false
 
 [node name="Credits" type="Label" parent="."]
 visible = false

@@ -235,6 +235,7 @@ skeleton = NodePath("../../..")
 
 [node name="Board" type="MeshInstance3D" parent="Camera"]
 transform = Transform3D(-0.999947, -0.00414044, -0.00936225, 0.00698096, -0.944731, -0.327771, -0.00748768, -0.327819, 0.944711, -0.000288397, -0.0784581, -0.170867)
+visible = false
 material_override = ExtResource("8_ll13h")
 mesh = SubResource("BoxMesh_8i07t")
 skeleton = NodePath("../..")

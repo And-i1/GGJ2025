@@ -20,7 +20,7 @@ workflow:
 pages:
   stage: everything
   script:
-    - mkdir -v -p build
+    - mkdir -v -p build/web
     - godot --headless --verbose --path project --export-release "web" "../build/web/index.html"
     - zip build-web.zip build/web/*
     - butler push build-web.zip $ITCH_NAME/$PROJECT_NAME:html
