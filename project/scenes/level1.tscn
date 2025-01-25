@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://uqy20m4t3e50"]
+[gd_scene load_steps=10 format=3 uid="uid://uqy20m4t3e50"]
 
 [ext_resource type="Script" path="res://things/gyro/gyro.gd" id="1_6witg"]
 [ext_resource type="PackedScene" uid="uid://c1sl6wanw55q1" path="res://scenes/ball_3d.tscn" id="2_f0img"]
+[ext_resource type="Script" path="res://things/scripts/followcamera.gd" id="3_axv67"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_p0k7j"]
 size = Vector2(12, 12)
@@ -73,7 +74,8 @@ mesh = SubResource("BoxMesh_ekfpr")
 shape = SubResource("ConcavePolygonShape3D_674ce")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 0, 6, 0)
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 0, 3, 0)
+script = ExtResource("3_axv67")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
