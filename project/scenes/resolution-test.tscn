@@ -15,6 +15,12 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0825849, 0.100351, 0.180904, 1)
 
+[node name="SubViewportContainer" parent="." instance=ExtResource("1_7elyo")]
+offset_right = 0.0
+offset_bottom = 0.0
+scale = Vector2(1, 1)
+pivot_offset = Vector2(0, 0)
+
 [node name="Debug" type="Label" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,9 +29,3 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_e5vo5")
 text = ">>>"
-
-[node name="SubViewportContainer" parent="." instance=ExtResource("1_7elyo")]
-offset_right = 0.0
-offset_bottom = 0.0
-scale = Vector2(1, 1)
-pivot_offset = Vector2(360, 540)
