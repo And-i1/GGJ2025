@@ -1,18 +1,27 @@
-[gd_scene load_steps=17 format=3 uid="uid://uqy20m4t3e50"]
+[gd_scene load_steps=19 format=3 uid="uid://uqy20m4t3e50"]
 
 [ext_resource type="Script" path="res://things/gyro/gyro.gd" id="1_6witg"]
 [ext_resource type="Script" path="res://things/lofi/lofi.gd" id="1_ympjb"]
 [ext_resource type="PackedScene" uid="uid://c1sl6wanw55q1" path="res://scenes/ball_3d.tscn" id="2_f0img"]
 [ext_resource type="PackedScene" uid="uid://ciix271un82cs" path="res://scenes/objective.tscn" id="3_0qren"]
 [ext_resource type="PackedScene" uid="uid://cdl5b5migytvo" path="res://scenes/level2.tscn" id="4_4suig"]
+[ext_resource type="Texture2D" uid="uid://bu5katvoqnton" path="res://textures/floor.png" id="4_cnqv4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dv7pb"]
+albedo_texture = ExtResource("4_cnqv4")
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_12pxf"]
+material = SubResource("StandardMaterial3D_dv7pb")
 size = Vector2(7, 7)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hxed8"]
 data = PackedVector3Array(3.5, 0, 3.5, -3.5, 0, 3.5, 3.5, 0, -3.5, -3.5, 0, 3.5, -3.5, 0, -3.5, 3.5, 0, -3.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_goaw4"]
+material = SubResource("StandardMaterial3D_dv7pb")
 size = Vector3(8, 2, 0.5)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_l71ci"]
@@ -22,6 +31,7 @@ data = PackedVector3Array(-4, 1, 0.25, 4, 1, 0.25, -4, -1, 0.25, 4, 1, 0.25, 4, 
 data = PackedVector3Array(-4, 1, 0.25, 4, 1, 0.25, -4, -1, 0.25, 4, 1, 0.25, 4, -1, 0.25, -4, -1, 0.25, 4, 1, -0.25, -4, 1, -0.25, 4, -1, -0.25, -4, 1, -0.25, -4, -1, -0.25, 4, -1, -0.25, 4, 1, 0.25, 4, 1, -0.25, 4, -1, 0.25, 4, 1, -0.25, 4, -1, -0.25, 4, -1, 0.25, -4, 1, -0.25, -4, 1, 0.25, -4, -1, -0.25, -4, 1, 0.25, -4, -1, 0.25, -4, -1, -0.25, 4, 1, 0.25, -4, 1, 0.25, 4, 1, -0.25, -4, 1, 0.25, -4, 1, -0.25, 4, 1, -0.25, -4, -1, 0.25, 4, -1, 0.25, -4, -1, -0.25, 4, -1, 0.25, 4, -1, -0.25, -4, -1, -0.25)
 
 [sub_resource type="BoxMesh" id="BoxMesh_stx0i"]
+material = SubResource("StandardMaterial3D_dv7pb")
 size = Vector3(7, 2, 0.5)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0h6er"]
@@ -31,6 +41,7 @@ data = PackedVector3Array(-3.5, 1, 0.25, 3.5, 1, 0.25, -3.5, -1, 0.25, 3.5, 1, 0
 data = PackedVector3Array(-3.5, 1, 0.25, 3.5, 1, 0.25, -3.5, -1, 0.25, 3.5, 1, 0.25, 3.5, -1, 0.25, -3.5, -1, 0.25, 3.5, 1, -0.25, -3.5, 1, -0.25, 3.5, -1, -0.25, -3.5, 1, -0.25, -3.5, -1, -0.25, 3.5, -1, -0.25, 3.5, 1, 0.25, 3.5, 1, -0.25, 3.5, -1, 0.25, 3.5, 1, -0.25, 3.5, -1, -0.25, 3.5, -1, 0.25, -3.5, 1, -0.25, -3.5, 1, 0.25, -3.5, -1, -0.25, -3.5, 1, 0.25, -3.5, -1, 0.25, -3.5, -1, -0.25, 3.5, 1, 0.25, -3.5, 1, 0.25, 3.5, 1, -0.25, -3.5, 1, 0.25, -3.5, 1, -0.25, 3.5, 1, -0.25, -3.5, -1, 0.25, 3.5, -1, 0.25, -3.5, -1, -0.25, 3.5, -1, 0.25, 3.5, -1, -0.25, -3.5, -1, -0.25)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ym5l7"]
+material = SubResource("StandardMaterial3D_dv7pb")
 size = Vector3(4, 2, 0.5)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3eu8k"]
