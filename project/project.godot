@@ -24,7 +24,6 @@ window/handheld/orientation=1
 [physics]
 
 common/physics_jitter_fix=0.0
-3d/solver/solver_iterations=200
 common/physics_interpolation=true
 
 [rendering]
