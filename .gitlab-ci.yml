@@ -1,7 +1,7 @@
 image: barichello/godot-ci:4.3
 
 variables:
-  PROJECT_NAME: whatever
+  PROJECT_NAME: ggj25
   ITCH_NAME: alvarber
 
 # Cache imported assets between runs
@@ -23,7 +23,7 @@ pages:
     - mkdir -v -p build
     - godot --headless --verbose --path project --export-release "web" "../build/index.html"
     - zip build.zip build/*
-    - butler push build.zip $ITCH_NAME/$PROJECT_NAME:html
+    # - butler push build.zip $ITCH_NAME/$PROJECT_NAME:html
     - mv build public
   pages: true
   artifacts:

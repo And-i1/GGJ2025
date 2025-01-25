@@ -27,7 +27,7 @@ tasks:
   export:
     cmds:
       - mkdir -p build/web
-      - $GODOT --headless --verbose --path project --export-release web ../build/web/index.html
+      - $GODOT --verbose --path project --export-release web ../build/web/index.html
     sources:
       - project/**/*
       - except: project/**/.DS_Store
