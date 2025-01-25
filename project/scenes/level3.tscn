@@ -72,6 +72,7 @@ render_target_update_mode = 4
 
 [node name="gyro" type="Node" parent="SubViewportContainer/SubViewport"]
 script = ExtResource("1_mp6q1")
+scn = ExtResource("2_1nvu3")
 
 [node name="Plane" type="Node3D" parent="SubViewportContainer/SubViewport/gyro"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, -1, 0)
