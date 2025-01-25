@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1sl6wanw55q1"]
+[gd_scene load_steps=6 format=3 uid="uid://c1sl6wanw55q1"]
 
 [ext_resource type="Script" path="res://things/scripts/ball_3d.gd" id="1_dxmws"]
+[ext_resource type="Material" path="res://textures/ball.mat.tres" id="2_tjogp"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_fq8pf"]
 radius = 0.2
 
 [sub_resource type="SphereMesh" id="SphereMesh_tcchl"]
+material = ExtResource("2_tjogp")
 radius = 0.2
 height = 0.4
 

@@ -1,11 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://cdl5b5migytvo"]
+[gd_scene load_steps=21 format=3 uid="uid://cdl5b5migytvo"]
 
 [ext_resource type="PackedScene" uid="uid://ciix271un82cs" path="res://scenes/objective.tscn" id="1_50mck"]
 [ext_resource type="Script" path="res://things/lofi/lofi.gd" id="1_dedq3"]
 [ext_resource type="Script" path="res://things/gyro/gyro.gd" id="1_f5lek"]
 [ext_resource type="PackedScene" uid="uid://c1sl6wanw55q1" path="res://scenes/ball_3d.tscn" id="1_j6xfo"]
 [ext_resource type="PackedScene" uid="uid://bbmbpiipynoft" path="res://scenes/level3.tscn" id="2_te1hd"]
-[ext_resource type="Theme" uid="uid://dwoio8l8rva2v" path="res://theme/default.theme.tres" id="6_7dvnt"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ecp5v"]
 size = Vector2(10, 4)
@@ -181,9 +180,3 @@ scn = ExtResource("2_te1hd")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
 
 [node name="Ball3D" parent="SubViewportContainer/SubViewport/gyro" instance=ExtResource("1_j6xfo")]
-
-[node name="Debug" type="Label" parent="SubViewportContainer"]
-layout_mode = 2
-theme = ExtResource("6_7dvnt")
-theme_override_font_sizes/font_size = 16
-text = "test"

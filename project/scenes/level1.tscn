@@ -1,11 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://uqy20m4t3e50"]
+[gd_scene load_steps=17 format=3 uid="uid://uqy20m4t3e50"]
 
 [ext_resource type="Script" path="res://things/gyro/gyro.gd" id="1_6witg"]
 [ext_resource type="Script" path="res://things/lofi/lofi.gd" id="1_ympjb"]
 [ext_resource type="PackedScene" uid="uid://c1sl6wanw55q1" path="res://scenes/ball_3d.tscn" id="2_f0img"]
 [ext_resource type="PackedScene" uid="uid://ciix271un82cs" path="res://scenes/objective.tscn" id="3_0qren"]
 [ext_resource type="PackedScene" uid="uid://cdl5b5migytvo" path="res://scenes/level2.tscn" id="4_4suig"]
-[ext_resource type="Theme" uid="uid://dwoio8l8rva2v" path="res://theme/default.theme.tres" id="6_g8fov"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_12pxf"]
 size = Vector2(7, 7)
@@ -136,11 +135,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.84834, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/gyro/Area3D"]
 shape = SubResource("BoxShape3D_yjrc1")
-
-[node name="Debug" type="Label" parent="SubViewportContainer"]
-layout_mode = 2
-theme = ExtResource("6_g8fov")
-theme_override_font_sizes/font_size = 16
-text = "test"
 
 [connection signal="area_entered" from="SubViewportContainer/SubViewport/gyro/Area3D" to="SubViewportContainer/SubViewport/gyro" method="_on_area_3d_area_entered"]
