@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bto38hovv4m70"]
+[gd_scene load_steps=20 format=3 uid="uid://bto38hovv4m70"]
 
 [ext_resource type="Script" path="res://things/lofi/lofi.gd" id="1_umote"]
 [ext_resource type="Script" path="res://things/gyro/gyro.gd" id="2_xy0c3"]
@@ -36,6 +36,9 @@ albedo_color = Color(0, 9.62615e-08, 0.423247, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_vw5ia"]
 material = SubResource("StandardMaterial3D_4lmet")
 size = Vector3(2, 10, 7)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_swrqc"]
+data = PackedVector3Array(-1, 5, 3.5, 1, 5, 3.5, -1, -5, 3.5, 1, 5, 3.5, 1, -5, 3.5, -1, -5, 3.5, 1, 5, -3.5, -1, 5, -3.5, 1, -5, -3.5, -1, 5, -3.5, -1, -5, -3.5, 1, -5, -3.5, 1, 5, 3.5, 1, 5, -3.5, 1, -5, 3.5, 1, 5, -3.5, 1, -5, -3.5, 1, -5, 3.5, -1, 5, -3.5, -1, 5, 3.5, -1, -5, -3.5, -1, 5, 3.5, -1, -5, 3.5, -1, -5, -3.5, 1, 5, 3.5, -1, 5, 3.5, 1, 5, -3.5, -1, 5, 3.5, -1, 5, -3.5, 1, 5, -3.5, -1, -5, 3.5, 1, -5, 3.5, -1, -5, -3.5, 1, -5, 3.5, 1, -5, -3.5, -1, -5, -3.5)
 
 [sub_resource type="Animation" id="Animation_uypmq"]
 resource_name = "updown"
@@ -162,6 +165,11 @@ shape = SubResource("ConcavePolygonShape3D_40qsw")
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/gyro/Plane"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, -0.5, 0)
 mesh = SubResource("BoxMesh_vw5ia")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_swrqc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/gyro/Plane"]
 libraries = {
