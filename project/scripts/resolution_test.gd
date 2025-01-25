@@ -8,8 +8,8 @@ func _ready() -> void:
 		var window = JavaScriptBridge.get_interface("window")
 		_dev_orientation = JavaScriptBridge.create_callback(on_device_orientation)
 		window.ondeviceorientation = _dev_orientation
-		await get_tree().create_timer(5).timeout
-		window.location = "https://itch.io/jam/malagajam-weekend-19/rate/3268311"
+		# await get_tree().create_timer(5).timeout
+		# window.location = "https://itch.io/jam/malagajam-weekend-19/rate/3268311"
 
 func on_device_orientation(args) -> void:
 	var rot = args[0]
