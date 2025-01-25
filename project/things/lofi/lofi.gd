@@ -1,11 +1,13 @@
 extends Node
 
+var x_basis = 180
+var y_basis = 180
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	var size = get_viewport().size
+	$Debug.text = "{}x{}".format([size[0], size[1]], "{}")
+	var max_x_scaling = size[0] / x_basis
+	var max_y_scaling = size[1] / y_basis
+	var min_scale = min(max_x_scaling, max_y_scaling)
+	$SubViewportContainer.size = Vector2()
+	
