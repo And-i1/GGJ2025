@@ -1,11 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://bto38hovv4m70"]
+[gd_scene load_steps=19 format=3 uid="uid://bto38hovv4m70"]
 
 [ext_resource type="Script" path="res://things/lofi/lofi.gd" id="1_umote"]
 [ext_resource type="Script" path="res://things/gyro/gyro.gd" id="2_xy0c3"]
 [ext_resource type="PackedScene" uid="uid://c1sl6wanw55q1" path="res://scenes/ball_3d.tscn" id="3_jjhcj"]
 [ext_resource type="PackedScene" uid="uid://ciix271un82cs" path="res://scenes/objective.tscn" id="4_aecl4"]
 [ext_resource type="Theme" uid="uid://dwoio8l8rva2v" path="res://theme/default.theme.tres" id="4_i8vot"]
-[ext_resource type="PackedScene" uid="uid://dsnbtbdrscqxe" path="res://scenes/level5.tscn" id="5_mu3ii"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_h6whp"]
 size = Vector2(6, 6)
@@ -31,11 +30,12 @@ size = Vector3(5, 5, 6)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_40qsw"]
 data = PackedVector3Array(-2.5, 2.5, 3, 2.5, 2.5, 3, -2.5, -2.5, 3, 2.5, 2.5, 3, 2.5, -2.5, 3, -2.5, -2.5, 3, 2.5, 2.5, -3, -2.5, 2.5, -3, 2.5, -2.5, -3, -2.5, 2.5, -3, -2.5, -2.5, -3, 2.5, -2.5, -3, 2.5, 2.5, 3, 2.5, 2.5, -3, 2.5, -2.5, 3, 2.5, 2.5, -3, 2.5, -2.5, -3, 2.5, -2.5, 3, -2.5, 2.5, -3, -2.5, 2.5, 3, -2.5, -2.5, -3, -2.5, 2.5, 3, -2.5, -2.5, 3, -2.5, -2.5, -3, 2.5, 2.5, 3, -2.5, 2.5, 3, 2.5, 2.5, -3, -2.5, 2.5, 3, -2.5, 2.5, -3, 2.5, 2.5, -3, -2.5, -2.5, 3, 2.5, -2.5, 3, -2.5, -2.5, -3, 2.5, -2.5, 3, 2.5, -2.5, -3, -2.5, -2.5, -3)
 
-[sub_resource type="BoxMesh" id="BoxMesh_vw5ia"]
-size = Vector3(2, 1, 7)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4lmet"]
+albedo_color = Color(0, 9.62615e-08, 0.423247, 1)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nnul0"]
-data = PackedVector3Array(-1, 0.5, 3.5, 1, 0.5, 3.5, -1, -0.5, 3.5, 1, 0.5, 3.5, 1, -0.5, 3.5, -1, -0.5, 3.5, 1, 0.5, -3.5, -1, 0.5, -3.5, 1, -0.5, -3.5, -1, 0.5, -3.5, -1, -0.5, -3.5, 1, -0.5, -3.5, 1, 0.5, 3.5, 1, 0.5, -3.5, 1, -0.5, 3.5, 1, 0.5, -3.5, 1, -0.5, -3.5, 1, -0.5, 3.5, -1, 0.5, -3.5, -1, 0.5, 3.5, -1, -0.5, -3.5, -1, 0.5, 3.5, -1, -0.5, 3.5, -1, -0.5, -3.5, 1, 0.5, 3.5, -1, 0.5, 3.5, 1, 0.5, -3.5, -1, 0.5, 3.5, -1, 0.5, -3.5, 1, 0.5, -3.5, -1, -0.5, 3.5, 1, -0.5, 3.5, -1, -0.5, -3.5, 1, -0.5, 3.5, 1, -0.5, -3.5, -1, -0.5, -3.5)
+[sub_resource type="BoxMesh" id="BoxMesh_vw5ia"]
+material = SubResource("StandardMaterial3D_4lmet")
+size = Vector3(2, 10, 7)
 
 [sub_resource type="Animation" id="Animation_uypmq"]
 resource_name = "updown"
@@ -51,7 +51,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 4.96667, 10),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, -6, 0), Vector3(0, 1.35, 0), Vector3(0, 6, 0)]
+"values": [Vector3(0, -11, 0), Vector3(0, -3.65, 0), Vector3(0, -11, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_wq4hv"]
@@ -163,11 +163,6 @@ shape = SubResource("ConcavePolygonShape3D_40qsw")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, -0.5, 0)
 mesh = SubResource("BoxMesh_vw5ia")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D7"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D7/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_nnul0")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewportContainer/SubViewport/gyro/Plane"]
 libraries = {
 "": SubResource("AnimationLibrary_00elv")
@@ -176,7 +171,6 @@ autoplay = "updown"
 
 [node name="Objective" parent="SubViewportContainer/SubViewport/gyro/Plane" instance=ExtResource("4_aecl4")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.86807, 1.13445, -2.67833e-07)
-scn = ExtResource("5_mu3ii")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/gyro"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
