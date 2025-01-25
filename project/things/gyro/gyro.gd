@@ -28,7 +28,7 @@ func on_device_orientation(args) -> void:
 	#$Debug.text = "x = {}\ny = {}".format(["%.2f" % xx, "%.2f" % yy], "{}")
 
 func _physics_process(delta):
-	$Plane.rotation_degrees = Vector3(move_toward($Plane.rotation_degrees, rotationobjective.x, 100), 0, move_toward($Plane.rotation_degrees, rotationobjective.x, 100))
+	$Plane.rotation_degrees = Vector3(move_toward($Plane.rotation_degrees.x, rotationobjective.x, 2), 0, move_toward($Plane.rotation_degrees.z, rotationobjective.z, 2))
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
