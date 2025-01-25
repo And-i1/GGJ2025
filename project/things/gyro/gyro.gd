@@ -29,7 +29,7 @@ func on_device_orientation(args) -> void:
 	#$Debug.text = "x = {}\ny = {}".format(["%.2f" % xx, "%.2f" % yy], "{}")
 
 func _physics_process(delta):
-	$Plane.rotation_degrees = rotate_toward($Plane.rotation_degrees, rotationobjective, delta)
+	$Plane.rotation_degrees = rotate_toward($Plane.rotation_degrees, rotationobjective, delta*1000)
 	
 
 func _input(event):
