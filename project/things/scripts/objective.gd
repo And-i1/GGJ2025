@@ -4,4 +4,5 @@ extends Node3D
 
 func _on_area_3d_area_entered(area):
 	if "ball" in area.name:
-		get_tree().change_scene_to_packed(scn)
+		Global.lvl += 1
+		get_tree().change_scene_to_packed(Global.ship)
