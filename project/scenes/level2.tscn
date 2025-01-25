@@ -179,7 +179,9 @@ scn = ExtResource("2_te1hd")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/gyro"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
 
-[node name="Ball3D" parent="SubViewportContainer/SubViewport/gyro" instance=ExtResource("1_j6xfo")]
+[node name="BallSpawn" type="Marker3D" parent="SubViewportContainer/SubViewport/gyro"]
+
+[node name="Ball3D" parent="SubViewportContainer/SubViewport/gyro/BallSpawn" instance=ExtResource("1_j6xfo")]
 
 [node name="Debug" type="Label" parent="SubViewportContainer"]
 layout_mode = 2

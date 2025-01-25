@@ -3,7 +3,7 @@ extends Node
 var _dev_orientation 
 var curve = load("res://things/curve/new_curve.tres")
 @export var scn : PackedScene
-var ball = null
+@onready var ball = $BallSpawn/Ball3D
 
 func _ready() -> void:
 	if OS.get_name() == "Web":
@@ -33,4 +33,4 @@ func _input(event):
 		if ball != null:
 			ball.queue_free()
 		ball = scn.instantiate()
-		add_child(ball, true)
+		$BallSpawn.add_child(ball, true)
