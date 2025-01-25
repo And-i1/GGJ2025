@@ -1,11 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://ogb8ulbb722r"]
+[gd_scene load_steps=3 format=3 uid="uid://ogb8ulbb722r"]
+
+[ext_resource type="Script" path="res://things/lofi/lofi.gd" id="1_tt20j"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_eq4pl"]
 
-[node name="xplosion" type="Node"]
-metadata/movie_file = "/Users/alvaro.bermejo/Async/Recordings/godot/explosion/in/explosion.png"
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="SubViewportContainer" type="SubViewportContainer"]
 texture_filter = 1
 texture_repeat = 1
 anchors_preset = 15
@@ -14,21 +13,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(16, 16)
+script = ExtResource("1_tt20j")
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="."]
 handle_input_locally = false
-size = Vector2i(180, 320)
+size = Vector2i(64, 64)
 render_target_update_mode = 4
 
-[node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport"]
+[node name="Node3D" type="Node3D" parent="SubViewport"]
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Node3D"]
-transform = Transform3D(0.828021, -0.0982022, 0.55203, 0, 0.984543, 0.175143, -0.560697, -0.145022, 0.815222, 1.93766, 0.409567, 1.6489)
+[node name="Camera3D" type="Camera3D" parent="SubViewport/Node3D"]
+transform = Transform3D(0.828021, -0.0982023, 0.55203, 0, 0.984543, 0.175143, -0.560697, -0.145022, 0.815223, 0.906164, 0.409567, 1.39001)
 current = true
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Node3D"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewport/Node3D"]
 transform = Transform3D(0.343414, -0.802281, 0.488274, 0, 0.519892, 0.854232, -0.939184, -0.293355, 0.178538, 0, 0, 0)
 mesh = SubResource("BoxMesh_eq4pl")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Node3D"]
-transform = Transform3D(0.910496, -0.317384, 0.265074, 0, 0.641021, 0.767523, -0.413518, -0.698827, 0.583647, 0, 0, 0)

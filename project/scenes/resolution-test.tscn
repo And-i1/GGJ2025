@@ -1,8 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://ce3n1r0iggsrg"]
+[gd_scene load_steps=4 format=3 uid="uid://ce3n1r0iggsrg"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_ajlsk"]
+[ext_resource type="PackedScene" uid="uid://ogb8ulbb722r" path="res://things/lofi/lofi.tscn" id="1_7elyo"]
+[ext_resource type="Script" path="res://things/lofi/lofi.gd" id="1_8om0c"]
+[ext_resource type="Theme" uid="uid://dwoio8l8rva2v" path="res://theme/default.theme.tres" id="3_e5vo5"]
 
 [node name="Resolution-test" type="Node"]
+script = ExtResource("1_8om0c")
+
+[node name="Debug" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_e5vo5")
+text = ">>>"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 visible = false
@@ -33,29 +45,5 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0, 0, 1)
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-texture_filter = 1
-texture_repeat = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(16, 16)
-
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(64, 64)
-render_target_update_mode = 4
-
-[node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport"]
-
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Node3D"]
-transform = Transform3D(0.82806, 0, 0.560639, 0, 1, 0, -0.560639, 0, 0.82806, 1.22, 0, 1.694)
-current = true
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Node3D"]
-transform = Transform3D(0.343414, -0.802281, 0.488274, 0, 0.519892, 0.854232, -0.939184, -0.293355, 0.178538, 0, 0, 0)
-mesh = SubResource("BoxMesh_ajlsk")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/Node3D"]
+[node name="SubViewportContainer" parent="." instance=ExtResource("1_7elyo")]
+script = null
