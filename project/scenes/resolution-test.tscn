@@ -1,9 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3agday6jn8jl"]
+[gd_scene load_steps=9 format=3 uid="uid://d3agday6jn8jl"]
 
 [ext_resource type="PackedScene" uid="uid://ogb8ulbb722r" path="res://things/lofi/lofi.tscn" id="1_7elyo"]
 [ext_resource type="Script" path="res://scripts/resolution_test.gd" id="1_mlyiw"]
 [ext_resource type="PackedScene" uid="uid://s4ptgmg40s5m" path="res://scenes/environment.tscn" id="2_pcr1h"]
+[ext_resource type="Theme" uid="uid://dwoio8l8rva2v" path="res://theme/default.theme.tres" id="5_5slfq"]
 [ext_resource type="PackedScene" uid="uid://cxwofyvwkvplh" path="res://things/fps-counter/fps-counter.tscn" id="6_2rawv"]
+[ext_resource type="FontFile" uid="uid://o15tr0gvxt8t" path="res://fonts/m3x6.ttf" id="6_55mlf"]
+[ext_resource type="Texture2D" uid="uid://dw8fgmxmsonbu" path="res://textures/blank.png" id="7_kqmv8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gx53x"]
+font = ExtResource("6_55mlf")
+font_size = 128
+outline_size = 16
+outline_color = Color(0.152941, 0.168627, 0.282353, 1)
 
 [node name="Resolution-test" type="Node"]
 script = ExtResource("1_mlyiw")
@@ -21,5 +30,54 @@ color = Color(0.0901961, 0.0862745, 0.14902, 1)
 [node name="Environment" parent="SubViewportContainer/SubViewport" index="0" instance=ExtResource("2_pcr1h")]
 
 [node name="Fps-counter" parent="." instance=ExtResource("6_2rawv")]
+
+[node name="Credits" type="Label" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_5slfq")
+text = "Person 1
+
+Person 2"
+label_settings = SubResource("LabelSettings_gx53x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Btns" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Itch" type="Button" parent="Btns"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme = ExtResource("5_5slfq")
+theme_override_colors/icon_normal_color = Color(0.247059, 0.164706, 0.192157, 1)
+text = "  Itch  "
+icon = ExtResource("7_kqmv8")
+flat = true
+icon_alignment = 1
+expand_icon = true
+text_direction = 1
+
+[node name="Replay" type="Button" parent="Btns"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme = ExtResource("5_5slfq")
+theme_override_colors/icon_normal_color = Color(0.247059, 0.164706, 0.192157, 1)
+text = " Replay "
+icon = ExtResource("7_kqmv8")
+flat = true
+icon_alignment = 1
+expand_icon = true
+text_direction = 1
 
 [editable path="SubViewportContainer"]
