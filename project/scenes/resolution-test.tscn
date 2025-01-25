@@ -7,37 +7,13 @@
 [node name="Resolution-test" type="Node"]
 script = ExtResource("1_8om0c")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-visible = false
+[node name="ColorRect2" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Control" type="Control" parent="CenterContainer"]
-custom_minimum_size = Vector2(720, 1280)
-layout_mode = 2
-
-[node name="ColorRect" type="ColorRect" parent="CenterContainer/Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 0, 0, 1)
-
-[node name="SubViewportContainer" parent="." instance=ExtResource("1_7elyo")]
-script = null
+color = Color(0.0825849, 0.100351, 0.180904, 1)
 
 [node name="Debug" type="Label" parent="."]
 anchors_preset = 15
@@ -47,3 +23,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_e5vo5")
 text = ">>>"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+use_top_left = true
+
+[node name="SubViewportContainer" parent="CenterContainer" instance=ExtResource("1_7elyo")]
+layout_mode = 2
+script = null
