@@ -39,7 +39,6 @@ func _input(event):
 		add_child(ball, true)
 
 
-
 func _on_area_3d_area_entered(area):
 	if ball != null:
 		ball.queue_free()
