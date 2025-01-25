@@ -4,6 +4,7 @@ var _dev_orientation
 var curve = load("res://things/curve/new_curve.tres")
 @export var scn : PackedScene
 @onready var ball = $Ball3D
+var rotationobjective
 
 func _ready() -> void:
 	if OS.get_name() == "Web":
@@ -23,9 +24,11 @@ func on_device_orientation(args) -> void:
 	#var yy = remap(y, 0, 180, -30, 30)
 	var xx = curve.sample(x/180)
 	var yy = curve.sample(y/180)
-	$Plane.rotation_degrees = Vector3(xx, 0, yy)
+	rotationobjective = Vector3(xx, 0, yy)
 	#$Debug.text = "x = {}\ny = {}".format(["%.2f" % xx, "%.2f" % yy], "{}")
-	
+
+func _physics_process(delta):
+	$Plane.rotation_degrees = Vector3(move_toward($Plane.rotation_degrees, rotationobjective.x, 100), 0, move_toward($Plane.rotation_degrees, rotationobjective.x, 100))
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed:
