@@ -34,4 +34,4 @@ func _input(event):
 		if ball != null:
 			ball.queue_free()
 		ball = scn.instantiate()
-		add_child(ball, true)
+		$BallSpawn.add_child(ball, true)
