@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://s4ptgmg40s5m"]
+[gd_scene load_steps=24 format=3 uid="uid://s4ptgmg40s5m"]
 
 [ext_resource type="Material" uid="uid://cvaiqjxbv0eua" path="res://textures/spaceship.mat.tres" id="1_rno14"]
 [ext_resource type="Material" uid="uid://bbele0sjw2qhx" path="res://textures/spaceship_floor.mat.tres" id="2_1f3sg"]
@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://bh3tyufogr6pa" path="res://textures/hands.mat.tres" id="6_iqfy1"]
 [ext_resource type="Material" uid="uid://bui7xepcrfhr0" path="res://textures/ball.mat.tres" id="7_8ksna"]
 [ext_resource type="Material" uid="uid://bwvwqdbnrsx2a" path="res://textures/board.mat.tres" id="8_ll13h"]
+[ext_resource type="Material" uid="uid://dwxnq0ftjhr18" path="res://textures/obstacle.mat.tres" id="9_2s3fo"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_dp5a1"]
 inner_radius = 2.0
@@ -93,6 +94,9 @@ rings = 8
 
 [sub_resource type="BoxMesh" id="BoxMesh_8i07t"]
 size = Vector3(0.08, 0.01, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oyv1w"]
+size = Vector3(0.01, 0.01, 0.01)
 
 [node name="Environment" type="Node3D"]
 
@@ -186,14 +190,14 @@ mesh = SubResource("SphereMesh_bxktu")
 skeleton = NodePath("../..")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.90978, 0, -8.63579)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7409, 9.53674e-07, -14.5251)
 amount = 256
 lifetime = 51200.0
 preprocess = 600.0
 speed_scale = 20.1
 mesh = SubResource("PointMesh_c45y2")
 emission_shape = 3
-emission_box_extents = Vector3(3, 3, 3)
+emission_box_extents = Vector3(7, 7, 5)
 direction = Vector3(0, 0, 0)
 spread = 0.0
 gravity = Vector3(0, 0, 0)
@@ -201,18 +205,20 @@ color_initial_ramp = SubResource("Gradient_ojn2w")
 
 [node name="Ball" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.634039, -0.281448, -2.43011)
+visible = false
 material_override = ExtResource("7_8ksna")
 mesh = SubResource("SphereMesh_eon6x")
 
 [node name="Board" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.917553, 0.130349, -0.375639, -1.04308e-07, -0.944737, -0.327828, -0.397612, -0.3008, 0.866847, 0.556926, -0.311395, -2.2174)
+visible = false
 material_override = ExtResource("8_ll13h")
 mesh = SubResource("BoxMesh_8i07t")
 
-[node name="Board2" type="MeshInstance3D" parent="Board"]
-transform = Transform3D(1, -7.45058e-09, 0, 2.98023e-08, 1, -5.96046e-08, 0, -5.96046e-08, 1, 5.96046e-08, -0.0250483, 0.00320601)
-material_override = ExtResource("8_ll13h")
-mesh = SubResource("BoxMesh_8i07t")
+[node name="Obstacle" type="MeshInstance3D" parent="Board"]
+transform = Transform3D(1, -7.45058e-09, 0, 2.98023e-08, 1, -5.96046e-08, 0, -5.96046e-08, 1, 5.93771e-08, -0.0101378, 0.00320601)
+material_override = ExtResource("9_2s3fo")
+mesh = SubResource("BoxMesh_oyv1w")
 skeleton = NodePath("../..")
 
 [editable path="window"]
