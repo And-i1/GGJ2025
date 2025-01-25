@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://uqy20m4t3e50"]
+[gd_scene load_steps=9 format=3 uid="uid://uqy20m4t3e50"]
 
 [ext_resource type="Script" path="res://things/gyro/gyro.gd" id="1_6witg"]
+[ext_resource type="PackedScene" uid="uid://c1sl6wanw55q1" path="res://scenes/ball_3d.tscn" id="2_f0img"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_p0k7j"]
 size = Vector2(12, 12)
@@ -22,6 +23,7 @@ data = PackedVector3Array(-6, 1.5, 0.5, 6, 1.5, 0.5, -6, -1.5, 0.5, 6, 1.5, 0.5,
 
 [node name="gyro" type="Node"]
 script = ExtResource("1_6witg")
+scn = ExtResource("2_f0img")
 
 [node name="Plane" type="Node3D" parent="."]
 
@@ -74,3 +76,5 @@ transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.3
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
+
+[node name="Ball3D" parent="." instance=ExtResource("2_f0img")]
