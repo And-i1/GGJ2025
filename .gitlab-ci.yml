@@ -21,10 +21,10 @@ pages:
   stage: everything
   script:
     - mkdir -v -p build
-    - godot --headless --verbose --path project --export-release "web" "../build/index.html"
-    - zip build.zip build/*
-    # - butler push build.zip $ITCH_NAME/$PROJECT_NAME:html
-    - mv build public
+    - godot --headless --verbose --path project --export-release "web" "../build/web/index.html"
+    - zip build-web.zip build/web/*
+    - butler push build-web.zip $ITCH_NAME/$PROJECT_NAME:html
+    - mv build/web public
   pages: true
   artifacts:
     paths:
