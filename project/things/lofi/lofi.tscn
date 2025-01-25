@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://ogb8ulbb722r"]
+[gd_scene load_steps=3 format=3 uid="uid://ogb8ulbb722r"]
+
+[ext_resource type="Theme" uid="uid://dwoio8l8rva2v" path="res://theme/default.theme.tres" id="1_41ps2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_eq4pl"]
 
@@ -33,3 +35,8 @@ transform = Transform3D(0.343414, -0.802281, 0.488274, 0, 0.519892, 0.854232, -0
 mesh = SubResource("BoxMesh_eq4pl")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport/Node3D"]
+
+[node name="Debug" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1_41ps2")
+text = "test"

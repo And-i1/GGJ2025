@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ce3n1r0iggsrg"]
+[gd_scene load_steps=2 format=3 uid="uid://ce3n1r0iggsrg"]
 
 [ext_resource type="PackedScene" uid="uid://ogb8ulbb722r" path="res://things/lofi/lofi.tscn" id="1_7elyo"]
-[ext_resource type="Theme" uid="uid://dwoio8l8rva2v" path="res://theme/default.theme.tres" id="3_e5vo5"]
 
 [node name="Resolution-test" type="Node"]
 
@@ -18,12 +17,3 @@ offset_right = 0.0
 offset_bottom = 0.0
 scale = Vector2(1, 1)
 pivot_offset = Vector2(0, 0)
-
-[node name="Debug" type="Label" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("3_e5vo5")
-text = ">>>"
