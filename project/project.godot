@@ -21,12 +21,6 @@ window/size/viewport_width=720
 window/size/viewport_height=1080
 window/handheld/orientation=1
 
-[physics]
-
-common/physics_ticks_per_second=300
-common/max_physics_steps_per_frame=50
-common/solver/solver_iterations=200
-
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
