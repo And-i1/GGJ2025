@@ -24,6 +24,7 @@ resource_local_to_scene = true
 background_mode = 1
 background_color = Color(0.0901961, 0.0862745, 0.14902, 1)
 background_energy_multiplier = 0.25
+background_intensity = 1.0
 ambient_light_source = 1
 reflected_light_source = 1
 glow_enabled = true
