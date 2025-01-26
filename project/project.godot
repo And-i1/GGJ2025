@@ -19,7 +19,6 @@ config/bg_color=Color(0, 0, 0, 1)
 
 [autoload]
 
-Lofi="*res://things/lofi/lofi.tscn"
 Global="*res://global.gd"
 
 [display]
