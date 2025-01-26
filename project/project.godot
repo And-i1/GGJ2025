@@ -20,6 +20,7 @@ config/bg_color=Color(0, 0, 0, 1)
 [autoload]
 
 Global="*res://global.gd"
+GlobalSound="*res://scenes/global_sound.gd"
 
 [display]
 
