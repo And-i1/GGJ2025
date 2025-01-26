@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://uqy20m4t3e50"]
+[gd_scene load_steps=28 format=3 uid="uid://uqy20m4t3e50"]
 
 [ext_resource type="Script" path="res://things/gyro/gyro.gd" id="1_6witg"]
 [ext_resource type="Script" path="res://things/lofi/lofi.gd" id="1_ympjb"]
 [ext_resource type="PackedScene" uid="uid://c1sl6wanw55q1" path="res://scenes/ball_3d.tscn" id="2_f0img"]
 [ext_resource type="PackedScene" uid="uid://ciix271un82cs" path="res://scenes/objective.tscn" id="3_0qren"]
-[ext_resource type="Material" uid="uid://7su18vvywk06" path="res://textures/boardingame.mat.tres" id="4_c77ri"]
+[ext_resource type="Material" path="res://textures/boardingame.mat.tres" id="4_c77ri"]
+[ext_resource type="Texture2D" uid="uid://dbdi6a2a66ngw" path="res://textures/instructions.png" id="6_2cj2t"]
 [ext_resource type="PackedScene" uid="uid://blohlen8ww83j" path="res://scenes/directional_light_3d.tscn" id="7_vas5i"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_12pxf"]
@@ -40,6 +41,70 @@ size = Vector3(4, 2, 0.5)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3eu8k"]
 data = PackedVector3Array(-2, 1, 0.25, 2, 1, 0.25, -2, -1, 0.25, 2, 1, 0.25, 2, -1, 0.25, -2, -1, 0.25, 2, 1, -0.25, -2, 1, -0.25, 2, -1, -0.25, -2, 1, -0.25, -2, -1, -0.25, 2, -1, -0.25, 2, 1, 0.25, 2, 1, -0.25, 2, -1, 0.25, 2, 1, -0.25, 2, -1, -0.25, 2, -1, 0.25, -2, 1, -0.25, -2, 1, 0.25, -2, -1, -0.25, -2, 1, 0.25, -2, -1, 0.25, -2, -1, -0.25, 2, 1, 0.25, -2, 1, 0.25, 2, 1, -0.25, -2, 1, 0.25, -2, 1, -0.25, 2, 1, -0.25, -2, -1, 0.25, 2, -1, 0.25, -2, -1, -0.25, 2, -1, 0.25, 2, -1, -0.25, -2, -1, -0.25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1dkj"]
+atlas = ExtResource("6_2cj2t")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8bgr"]
+atlas = ExtResource("6_2cj2t")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shmb7"]
+atlas = ExtResource("6_2cj2t")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6ig0"]
+atlas = ExtResource("6_2cj2t")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubrbq"]
+atlas = ExtResource("6_2cj2t")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qslv"]
+atlas = ExtResource("6_2cj2t")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce5rq"]
+atlas = ExtResource("6_2cj2t")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0whn"]
+atlas = ExtResource("6_2cj2t")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ifqtu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1dkj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8bgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shmb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6ig0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubrbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qslv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ce5rq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0whn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yjrc1"]
 size = Vector3(100, 1, 100)
@@ -136,6 +201,13 @@ shape = SubResource("ConcavePolygonShape3D_3eu8k")
 
 [node name="Objective" parent="SubViewportContainer/SubViewport/gyro/Plane" instance=ExtResource("3_0qren")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 0.01, 0)
+
+[node name="Instructions" type="AnimatedSprite3D" parent="SubViewportContainer/SubViewport/gyro/Plane"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -1.25271, 0.0120819, 0)
+pixel_size = 0.08
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_ifqtu")
+autoplay = "default"
 
 [node name="DirectionalLight3D" parent="SubViewportContainer/SubViewport/gyro" instance=ExtResource("7_vas5i")]
 
