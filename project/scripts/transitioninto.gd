@@ -8,7 +8,7 @@ func _ready() -> void:
 	tw.tween_property(self, "color:a", 0, 1)
 	var timer = get_tree().create_timer(1)
 	await timer.timeout
-	get_tree().change_scene_to_packed(load(str("res://scenes/level%.tscn",Global.lvl)))
+	get_tree().change_scene_to_packed(load(Global.lvldirectories[Global.lvl]))
 	timer = get_tree().create_timer(1)
 	await timer.timeout
-	get_parent().get_parent().queue_free()
+	queue_free()

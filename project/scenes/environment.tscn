@@ -1,14 +1,14 @@
-[gd_scene load_steps=33 format=3 uid="uid://s4ptgmg40s5m"]
+[gd_scene load_steps=34 format=3 uid="uid://s4ptgmg40s5m"]
 
-[ext_resource type="Material" uid="uid://cvaiqjxbv0eua" path="res://textures/spaceship.mat.tres" id="1_rno14"]
-[ext_resource type="Material" uid="uid://bbele0sjw2qhx" path="res://textures/spaceship_floor.mat.tres" id="2_1f3sg"]
+[ext_resource type="Material" path="res://textures/spaceship.mat.tres" id="1_rno14"]
+[ext_resource type="Material" path="res://textures/spaceship_floor.mat.tres" id="2_1f3sg"]
 [ext_resource type="PackedScene" uid="uid://cnvs5t8ev13i3" path="res://models/window.glb" id="3_rjvk4"]
-[ext_resource type="Material" uid="uid://xv17yqujfok3" path="res://textures/window.mat.tres" id="4_mxc2u"]
-[ext_resource type="Material" uid="uid://8gt67ad7j53l" path="res://textures/planet.mat.tres" id="5_i0255"]
-[ext_resource type="Material" uid="uid://bh3tyufogr6pa" path="res://textures/hands.mat.tres" id="6_iqfy1"]
-[ext_resource type="Material" uid="uid://bui7xepcrfhr0" path="res://textures/ball.mat.tres" id="7_8ksna"]
+[ext_resource type="Material" path="res://textures/window.mat.tres" id="4_mxc2u"]
+[ext_resource type="Material" path="res://textures/planet.mat.tres" id="5_i0255"]
+[ext_resource type="Material" path="res://textures/hands.mat.tres" id="6_iqfy1"]
+[ext_resource type="Material" path="res://textures/ball.mat.tres" id="7_8ksna"]
 [ext_resource type="Material" uid="uid://bwvwqdbnrsx2a" path="res://textures/board.mat.tres" id="8_ll13h"]
-[ext_resource type="Material" uid="uid://dwxnq0ftjhr18" path="res://textures/obstacle.mat.tres" id="9_2s3fo"]
+[ext_resource type="Material" uid="uid://dc71p1qyavxux" path="res://textures/obstacle.mat.tres" id="9_2s3fo"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_dp5a1"]
 inner_radius = 2.0
@@ -289,10 +289,74 @@ tracks/4/keys = {
 "values": [Vector3(0.333943, -0.00990996, 3.1342), Vector3(1.12534, -0.0221097, 3.12539)]
 }
 
+[sub_resource type="Animation" id="Animation_nylqd"]
+resource_name = "outof_lvl"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera/Node3D/Board:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera/Node3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.316917, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera/Node3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.04683e-09, 0.0176338, 0.0773557), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera/Node3D/Board:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.000384587, -0.0674067, -0.147718), Vector3(-0.000288397, -0.0784581, -0.170867)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera/Node3D/Board:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.12534, -0.0221097, 3.12539), Vector3(0.333943, -0.00990996, 3.1342)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qk2t1"]
 _data = {
 "RESET": SubResource("Animation_h8lx0"),
-"into_lvl": SubResource("Animation_ld2d7")
+"into_lvl": SubResource("Animation_ld2d7"),
+"outof_lvl": SubResource("Animation_nylqd")
 }
 
 [node name="Environment" type="Node3D"]
@@ -438,6 +502,5 @@ gravity = Vector3(0, 0, 0)
 libraries = {
 "": SubResource("AnimationLibrary_qk2t1")
 }
-speed_scale = -1.0
 
 [editable path="window"]

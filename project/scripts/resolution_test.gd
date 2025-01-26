@@ -4,7 +4,9 @@ extends Node
 var _dev_orientation 
 
 func _ready() -> void:
-	$SubViewportContainer/SubViewport/Environment/Transitioner.play_backwards("into_lvl")
+	$SubViewportContainer/SubViewport/Environment/Transitioner.play("outof_lvl")
+	var timer = get_tree().create_timer(3)
+	timer.timeout.connect(Callable(self, "transition_into"))
 	if OS.get_name() == "Web":
 		var window = JavaScriptBridge.get_interface("window")
 		_dev_orientation = JavaScriptBridge.create_callback(on_device_orientation)
@@ -22,4 +24,5 @@ func on_device_orientation(args) -> void:
 	$SubViewportContainer/SubViewport/Environment/Camera.rotation_degrees.x = yy
 
 func transition_into():
+	$SubViewportContainer/SubViewport/Environment/Transitioner.play("into_lvl")
 	Global.add_sibling(preload("res://scenes/transitioninto.tscn").instantiate())
