@@ -1,4 +1,4 @@
-extends Node3D
+extends Node
 
 var _dev_orientation 
 var curve = load("res://things/curve/new_curve.tres")
