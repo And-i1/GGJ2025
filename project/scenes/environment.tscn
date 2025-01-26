@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://s4ptgmg40s5m"]
+[gd_scene load_steps=33 format=3 uid="uid://s4ptgmg40s5m"]
 
 [ext_resource type="Material" uid="uid://cvaiqjxbv0eua" path="res://textures/spaceship.mat.tres" id="1_rno14"]
 [ext_resource type="Material" uid="uid://bbele0sjw2qhx" path="res://textures/spaceship_floor.mat.tres" id="2_1f3sg"]
@@ -163,6 +163,139 @@ sections = 10
 section_segments = 10
 curve = SubResource("Curve_72qko")
 
+[sub_resource type="Animation" id="Animation_ld2d7"]
+resource_name = "into_lvl"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera/Node3D/Board:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera/Node3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.316917, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera/Node3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.04683e-09, 0.0176338, 0.0773557)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera/Node3D/Board:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.000288397, -0.0784581, -0.170867), Vector3(-0.000384587, -0.0674067, -0.147718)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera/Node3D/Board:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.333943, -0.00990996, 3.1342), Vector3(1.12534, -0.0221097, 3.12539)]
+}
+
+[sub_resource type="Animation" id="Animation_h8lx0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera/Node3D/Board:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera/Node3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera/Node3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera/Node3D/Board:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.000288397, -0.0784581, -0.170867)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera/Node3D/Board:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.333943, -0.00990996, 3.1342)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qk2t1"]
+_data = {
+"RESET": SubResource("Animation_h8lx0"),
+"into_lvl": SubResource("Animation_ld2d7")
+}
+
 [node name="Environment" type="Node3D"]
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
@@ -184,67 +317,71 @@ mesh = SubResource("PlaneMesh_n6t3q")
 transform = Transform3D(0.920482, -0.00642629, -0.390731, 0.00698126, 0.999976, 0, 0.390721, -0.0027278, 0.920505, 0.486515, -0.235912, -2.05235)
 environment = SubResource("Environment_qqfux")
 fov = 90.0
+near = 0.002
 
-[node name="Arm" type="MeshInstance3D" parent="Camera"]
+[node name="Node3D" type="Node3D" parent="Camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Arm" type="MeshInstance3D" parent="Camera/Node3D"]
 transform = Transform3D(-0.456432, 0.131057, -0.156503, 0.194795, 0.165041, -0.429902, -0.061024, -0.453415, -0.201719, -0.0387205, -0.098966, -0.114008)
 material_override = ExtResource("6_iqfy1")
 mesh = SubResource("CapsuleMesh_8j0xg")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 
-[node name="Finger3" type="MeshInstance3D" parent="Camera/Arm"]
+[node name="Finger3" type="MeshInstance3D" parent="Camera/Node3D/Arm"]
 transform = Transform3D(-0.43352, 0.371193, -0.821143, -0.37365, 0.755157, 0.538631, 0.820028, 0.540328, -0.188679, 0.0279891, 0.0232769, 0.00680125)
 material_override = ExtResource("6_iqfy1")
 mesh = SubResource("CapsuleMesh_8j0xg")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Finger2" type="MeshInstance3D" parent="Camera/Arm"]
+[node name="Finger2" type="MeshInstance3D" parent="Camera/Node3D/Arm"]
 transform = Transform3D(0.979248, -0.0132529, 0.202231, -0.0394062, 0.966364, 0.254142, -0.198797, -0.256837, 0.945788, 0.00695348, 0.0258904, -0.00882792)
 material_override = ExtResource("6_iqfy1")
 mesh = SubResource("CapsuleMesh_8j0xg")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Finger" type="MeshInstance3D" parent="Camera/Arm"]
+[node name="Finger" type="MeshInstance3D" parent="Camera/Node3D/Arm"]
 transform = Transform3D(0.658005, -0.573912, 0.487497, 0.299108, 0.793335, 0.530239, -0.69106, -0.203086, 0.693681, -0.0130947, 0.0208637, -0.0174288)
 material_override = ExtResource("6_iqfy1")
 mesh = SubResource("CapsuleMesh_8j0xg")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Arm2" type="MeshInstance3D" parent="Camera"]
-transform = Transform3D(-0.382104, -0.127577, -0.296176, 0.288587, 0.0696696, -0.402323, 0.143923, -0.478404, 0.0203918, 0.041508, -0.0995264, -0.114248)
+[node name="Arm2" type="MeshInstance3D" parent="Camera/Node3D"]
+transform = Transform3D(-0.382104, -0.127577, -0.296176, 0.288587, 0.0696696, -0.402323, 0.143923, -0.478404, 0.0203918, 0.0415081, -0.0995264, -0.114248)
 material_override = ExtResource("6_iqfy1")
 mesh = SubResource("CapsuleMesh_8j0xg")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 
-[node name="Finger3" type="MeshInstance3D" parent="Camera/Arm2"]
+[node name="Finger3" type="MeshInstance3D" parent="Camera/Node3D/Arm2"]
 transform = Transform3D(-0.43352, 0.371193, -0.821143, -0.37365, 0.755157, 0.538631, 0.820028, 0.540328, -0.188679, 0.0279891, 0.0232769, 0.00680125)
 material_override = ExtResource("6_iqfy1")
 mesh = SubResource("CapsuleMesh_8j0xg")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Finger2" type="MeshInstance3D" parent="Camera/Arm2"]
+[node name="Finger2" type="MeshInstance3D" parent="Camera/Node3D/Arm2"]
 transform = Transform3D(0.979248, -0.0132529, 0.202231, -0.0394062, 0.966364, 0.254142, -0.198797, -0.256837, 0.945788, 0.00695348, 0.0258904, -0.00882792)
 material_override = ExtResource("6_iqfy1")
 mesh = SubResource("CapsuleMesh_8j0xg")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Finger" type="MeshInstance3D" parent="Camera/Arm2"]
+[node name="Finger" type="MeshInstance3D" parent="Camera/Node3D/Arm2"]
 transform = Transform3D(0.658005, -0.573912, 0.487497, 0.299108, 0.793335, 0.530239, -0.69106, -0.203086, 0.693681, -0.0130947, 0.0208637, -0.0174288)
 material_override = ExtResource("6_iqfy1")
 mesh = SubResource("CapsuleMesh_8j0xg")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Board" type="MeshInstance3D" parent="Camera"]
-transform = Transform3D(-0.999947, -0.00414044, -0.00936225, 0.00698096, -0.944731, -0.327771, -0.00748768, -0.327819, 0.944711, -0.000288397, -0.0784581, -0.170867)
+[node name="Board" type="MeshInstance3D" parent="Camera/Node3D"]
+transform = Transform3D(-0.999947, -0.00414073, -0.00936235, 0.00698095, -0.944731, -0.327771, -0.00748769, -0.327819, 0.944711, -0.000288397, -0.0784581, -0.170867)
 visible = false
 material_override = ExtResource("8_ll13h")
 mesh = SubResource("BoxMesh_8i07t")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 
-[node name="Obstacle" type="MeshInstance3D" parent="Camera/Board"]
+[node name="Obstacle" type="MeshInstance3D" parent="Camera/Node3D/Board"]
 transform = Transform3D(1, -7.45058e-09, 0, 2.98023e-08, 1, -5.96046e-08, 0, -5.96046e-08, 1, 5.93771e-08, -0.0101378, 0.00320601)
 material_override = ExtResource("9_2s3fo")
 mesh = SubResource("BoxMesh_oyv1w")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
 [node name="window" parent="." instance=ExtResource("3_rjvk4")]
 transform = Transform3D(0.799157, -0.38531, 0.461394, 0.5, -5.96046e-08, -0.866025, 0.333688, 0.922787, 0.192655, 1.3113, 0, -4.10583)
@@ -295,8 +432,13 @@ autoplay = "Comet"
 
 [node name="Comet" type="CPUParticles3D" parent="CometAnimator"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0.597244, -8.92366)
-amount = 10
+amount = 16
 mesh = SubResource("RibbonTrailMesh_vadhb")
 gravity = Vector3(0, 0, 0)
+
+[node name="Transitioner" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qk2t1")
+}
 
 [editable path="window"]
