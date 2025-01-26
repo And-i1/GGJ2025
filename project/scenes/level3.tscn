@@ -1,11 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://bbmbpiipynoft"]
+[gd_scene load_steps=22 format=3 uid="uid://bbmbpiipynoft"]
 
 [ext_resource type="Script" path="res://things/lofi/lofi.gd" id="1_cfrwc"]
 [ext_resource type="Script" path="res://things/gyro/gyro.gd" id="1_mp6q1"]
 [ext_resource type="PackedScene" uid="uid://c1sl6wanw55q1" path="res://scenes/ball_3d.tscn" id="2_1nvu3"]
 [ext_resource type="PackedScene" uid="uid://ciix271un82cs" path="res://scenes/objective.tscn" id="2_5bq34"]
 [ext_resource type="Material" uid="uid://7su18vvywk06" path="res://textures/boardingame.mat.tres" id="4_8t718"]
-[ext_resource type="PackedScene" uid="uid://bto38hovv4m70" path="res://scenes/level4.tscn" id="5_n6j4a"]
 [ext_resource type="PackedScene" uid="uid://blohlen8ww83j" path="res://scenes/directional_light_3d.tscn" id="6_gmih2"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_reqki"]
@@ -182,7 +181,6 @@ shape = SubResource("ConcavePolygonShape3D_afmaw")
 [node name="Objective" parent="SubViewportContainer/SubViewport/gyro/Plane" instance=ExtResource("2_5bq34")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.5, -0.755498, -0.5)
 skeleton = NodePath("../MeshInstance3D3")
-scn = ExtResource("5_n6j4a")
 
 [node name="Ball3D" parent="SubViewportContainer/SubViewport/gyro" instance=ExtResource("2_1nvu3")]
 
