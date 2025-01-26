@@ -15,5 +15,7 @@ func on_device_orientation(args) -> void:
 	var rot = args[0]
 	var x = clamp(float(rot.gamma), -90.0, 90.0) + 90
 	var y = float(rot.beta) + 90
-	var z = remap(x, 0, 180, -30, -16)
-	$SubViewportContainer/SubViewport/Environment/Camera.rotation_degrees.y = z
+	var xx = remap(x, 0, 180, -30, -16)
+	var yy = remap(y, 0, 180, -15, 15)
+	$SubViewportContainer/SubViewport/Environment/Camera.rotation_degrees.y = xx
+	$SubViewportContainer/SubViewport/Environment/Camera.rotation_degrees.x = yy

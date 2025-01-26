@@ -228,7 +228,6 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_ld2d7"]
 resource_name = "into_lvl"
-loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -439,5 +438,7 @@ gravity = Vector3(0, 0, 0)
 libraries = {
 "": SubResource("AnimationLibrary_qk2t1")
 }
+autoplay = "into_lvl"
+speed_scale = -1.0
 
 [editable path="window"]
