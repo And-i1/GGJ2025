@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ggj25"
-run/main_scene="res://scenes/level1.tscn"
+run/main_scene="res://scenes/resolution-test.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://textures/icon.svg"
@@ -19,6 +19,7 @@ config/bg_color=Color(0, 0, 0, 1)
 
 [autoload]
 
+Lofi="*res://things/lofi/lofi.tscn"
 Global="*res://global.gd"
 
 [display]
