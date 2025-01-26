@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://things/lofi/lofi.gd" id="1_ympjb"]
 [ext_resource type="PackedScene" uid="uid://c1sl6wanw55q1" path="res://scenes/ball_3d.tscn" id="2_f0img"]
 [ext_resource type="PackedScene" uid="uid://ciix271un82cs" path="res://scenes/objective.tscn" id="3_0qren"]
-[ext_resource type="Material" path="res://textures/boardingame.mat.tres" id="4_c77ri"]
+[ext_resource type="Material" uid="uid://7su18vvywk06" path="res://textures/boardingame.mat.tres" id="4_c77ri"]
 [ext_resource type="Texture2D" uid="uid://dbdi6a2a66ngw" path="res://textures/instructions.png" id="6_2cj2t"]
 [ext_resource type="PackedScene" uid="uid://blohlen8ww83j" path="res://scenes/directional_light_3d.tscn" id="7_vas5i"]
 

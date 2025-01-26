@@ -1,14 +1,14 @@
 [gd_scene load_steps=40 format=3 uid="uid://s4ptgmg40s5m"]
 
-[ext_resource type="Material" uid="uid://cvaiqjxbv0eua" path="res://textures/spaceship.mat.tres" id="1_rno14"]
-[ext_resource type="Material" uid="uid://bbele0sjw2qhx" path="res://textures/spaceship_floor.mat.tres" id="2_1f3sg"]
+[ext_resource type="Material" path="res://textures/spaceship.mat.tres" id="1_rno14"]
+[ext_resource type="Material" path="res://textures/spaceship_floor.mat.tres" id="2_1f3sg"]
 [ext_resource type="PackedScene" uid="uid://cnvs5t8ev13i3" path="res://models/window.glb" id="3_rjvk4"]
-[ext_resource type="Material" uid="uid://xv17yqujfok3" path="res://textures/window.mat.tres" id="4_mxc2u"]
-[ext_resource type="Material" uid="uid://8gt67ad7j53l" path="res://textures/planet.mat.tres" id="5_i0255"]
-[ext_resource type="Material" uid="uid://bh3tyufogr6pa" path="res://textures/hands.mat.tres" id="6_iqfy1"]
-[ext_resource type="Material" uid="uid://bui7xepcrfhr0" path="res://textures/ball.mat.tres" id="7_8ksna"]
+[ext_resource type="Material" path="res://textures/window.mat.tres" id="4_mxc2u"]
+[ext_resource type="Material" path="res://textures/planet.mat.tres" id="5_i0255"]
+[ext_resource type="Material" path="res://textures/hands.mat.tres" id="6_iqfy1"]
+[ext_resource type="Material" path="res://textures/ball.mat.tres" id="7_8ksna"]
 [ext_resource type="Material" uid="uid://bwvwqdbnrsx2a" path="res://textures/board.mat.tres" id="8_ll13h"]
-[ext_resource type="Material" uid="uid://dwxnq0ftjhr18" path="res://textures/obstacle.mat.tres" id="9_2s3fo"]
+[ext_resource type="Material" uid="uid://dc71p1qyavxux" path="res://textures/obstacle.mat.tres" id="9_2s3fo"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_dp5a1"]
 inner_radius = 2.0
