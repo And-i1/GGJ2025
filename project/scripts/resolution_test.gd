@@ -16,6 +16,8 @@ func _ready() -> void:
 	var timer = get_tree().create_timer(10)
 	if Global.lvl != 4:
 		timer.timeout.connect(Callable(self, "transition_into"))
+	else:
+		timer.timeout.connect(Callable(self, "transition_into"))
 	if OS.get_name() == "Web":
 		var window = JavaScriptBridge.get_interface("window")
 		_dev_orientation = JavaScriptBridge.create_callback(on_device_orientation)
@@ -35,3 +37,6 @@ func on_device_orientation(args) -> void:
 func transition_into():
 	$SubViewportContainer/SubViewport/Environment/Transitioner.play("into_lvl")
 	Global.add_sibling(preload("res://scenes/transitioninto.tscn").instantiate())
+	
+func credits():
+	$CreditsAnimation.play("new_animation")
