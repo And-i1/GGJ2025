@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c1sl6wanw55q1"]
 
 [ext_resource type="Script" path="res://things/scripts/ball_3d.gd" id="1_dxmws"]
-[ext_resource type="Material" path="res://textures/ball.mat.tres" id="2_tjogp"]
+[ext_resource type="Material" uid="uid://bui7xepcrfhr0" path="res://textures/ball.mat.tres" id="2_tjogp"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_fq8pf"]
 radius = 0.2
