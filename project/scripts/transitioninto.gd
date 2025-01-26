@@ -10,7 +10,6 @@ func _ready() -> void:
 	await timer.timeout
 	var scene = load(Global.lvldirectories[Global.lvl])
 	get_tree().change_scene_to_packed(scene)
-	GlobalSound.pause_space()
 	timer = get_tree().create_timer(1)
 	await timer.timeout
 	queue_free()

@@ -9,7 +9,6 @@ func _ready() -> void:
 	var timer = get_tree().create_timer(1)
 	await timer.timeout
 	get_tree().change_scene_to_packed(Global.ship)
-	GlobalSound.play_space()
 	timer = get_tree().create_timer(1)
 	await timer.timeout
 	queue_free()
