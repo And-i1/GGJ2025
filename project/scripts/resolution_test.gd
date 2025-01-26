@@ -43,4 +43,10 @@ func credits():
 
 
 func _on_itch_pressed():
+	var window = JavaScriptBridge.get_interface("window")
 	window.location = "https://itch.io/jam/malagajam-weekend-19/rate/3268311"
+
+
+func _on_replay_pressed():
+	Global.lvl = 0
+	get_tree().change_scene_to_packed(load("res://scenes/level1.tscn"))
