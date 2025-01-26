@@ -25,7 +25,7 @@ func on_device_orientation(args) -> void:
 	#var xx = remap(x, 0, 180, -30, 30)
 	#var yy = remap(y, 0, 180, -30, 30)
 	if extradistancescaling:
-		turnstrength = (1-($Plane.global_position.distance_to(ball.global_position)/10))
+		turnstrength = 1-($Plane.global_position.distance_to(ball.global_position)/10)
 	var xx = curve.sample(x/180)*turnstrength
 	var yy = curve.sample(y/180)*turnstrength
 	rotationobjective = Vector3(xx, 0, yy)
