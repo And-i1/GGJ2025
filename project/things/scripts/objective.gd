@@ -5,4 +5,5 @@ extends Node3D
 func _on_area_3d_area_entered(area):
 	if "ball" in area.name:
 		Global.lvl += 1
-		get_tree().change_scene_to_packed(preload("res://scenes/transition.tscn"))
+		get_parent().add_sibling(preload("res://scenes/transition.tscn").instantiate())
+		
