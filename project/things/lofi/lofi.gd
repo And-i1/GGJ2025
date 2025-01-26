@@ -1,6 +1,6 @@
 extends SubViewportContainer
 
-var basis := Vector2i(180, 320)
+var basis := Vector2i(90, 160)
 
 
 func _process(_delta: float) -> void:
