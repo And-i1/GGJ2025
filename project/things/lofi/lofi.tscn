@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://ogb8ulbb722r"]
+[gd_scene load_steps=2 format=3 uid="uid://ogb8ulbb722r"]
 
-[ext_resource type="Theme" uid="uid://dwoio8l8rva2v" path="res://theme/default.theme.tres" id="1_41ps2"]
 [ext_resource type="Script" path="res://things/lofi/lofi.gd" id="1_tt20j"]
 
 [node name="SubViewportContainer" type="SubViewportContainer"]
@@ -22,10 +21,3 @@ script = ExtResource("1_tt20j")
 handle_input_locally = false
 size = Vector2i(180, 320)
 render_target_update_mode = 4
-
-[node name="Debug" type="Label" parent="."]
-visible = false
-layout_mode = 2
-theme = ExtResource("1_41ps2")
-theme_override_font_sizes/font_size = 16
-text = "test"

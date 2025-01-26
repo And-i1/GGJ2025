@@ -1,7 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://uqy20m4t3e50"]
+[gd_scene load_steps=18 format=3 uid="uid://uqy20m4t3e50"]
 
 [ext_resource type="Script" path="res://things/gyro/gyro.gd" id="1_6witg"]
-[ext_resource type="Script" path="res://things/lofi/lofi.gd" id="1_ympjb"]
 [ext_resource type="PackedScene" uid="uid://c1sl6wanw55q1" path="res://scenes/ball_3d.tscn" id="2_f0img"]
 [ext_resource type="PackedScene" uid="uid://ciix271un82cs" path="res://scenes/objective.tscn" id="3_0qren"]
 [ext_resource type="PackedScene" uid="uid://cdl5b5migytvo" path="res://scenes/level2.tscn" id="4_4suig"]
@@ -45,100 +44,78 @@ data = PackedVector3Array(-2, 1, 0.25, 2, 1, 0.25, -2, -1, 0.25, 2, 1, 0.25, 2, 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yjrc1"]
 size = Vector3(100, 1, 100)
 
-[node name="Node" type="Node"]
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-texture_filter = 1
-texture_repeat = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 180.0
-offset_bottom = 520.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(5, 5)
-size_flags_horizontal = 6
-size_flags_vertical = 6
-script = ExtResource("1_ympjb")
-
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(180, 320)
-render_target_update_mode = 4
-
-[node name="gyro" type="Node" parent="SubViewportContainer/SubViewport"]
+[node name="gyro" type="Node"]
 script = ExtResource("1_6witg")
 scn = ExtResource("2_f0img")
 
-[node name="Plane" type="Node3D" parent="SubViewportContainer/SubViewport/gyro"]
+[node name="Plane" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/gyro/Plane"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Plane"]
 mesh = SubResource("PlaneMesh_12pxf")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_hxed8")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/gyro/Plane"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Plane"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3.75)
 mesh = SubResource("BoxMesh_goaw4")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane/MeshInstance3D2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/MeshInstance3D2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_l71ci")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/gyro/Plane"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Plane"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3.75)
 mesh = SubResource("BoxMesh_goaw4")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane/MeshInstance3D3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/MeshInstance3D3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_wix61")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/gyro/Plane"]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Plane"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.75, 1, 0)
 mesh = SubResource("BoxMesh_stx0i")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane/MeshInstance3D4"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/MeshInstance3D4/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_0h6er")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/gyro/Plane"]
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Plane"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.75, 1, 0)
 mesh = SubResource("BoxMesh_stx0i")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane/MeshInstance3D5"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/MeshInstance3D5/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_74app")
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/gyro/Plane"]
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Plane"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 1, 0)
 mesh = SubResource("BoxMesh_ym5l7")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D6"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane/MeshInstance3D6"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/gyro/Plane/MeshInstance3D6/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/MeshInstance3D6/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_3eu8k")
 
-[node name="Objective" parent="SubViewportContainer/SubViewport/gyro/Plane" instance=ExtResource("3_0qren")]
+[node name="Objective" parent="Plane" instance=ExtResource("3_0qren")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 0.01, 0)
 scn = ExtResource("4_4suig")
 
-[node name="DirectionalLight3D" parent="SubViewportContainer/SubViewport/gyro" instance=ExtResource("7_vas5i")]
+[node name="DirectionalLight3D" parent="." instance=ExtResource("7_vas5i")]
 
-[node name="Ball3D" parent="SubViewportContainer/SubViewport/gyro" instance=ExtResource("2_f0img")]
+[node name="Ball3D" parent="." instance=ExtResource("2_f0img")]
 
-[node name="Area3D" type="Area3D" parent="SubViewportContainer/SubViewport/gyro"]
+[node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.84834, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/gyro/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_yjrc1")
 
-[connection signal="area_entered" from="SubViewportContainer/SubViewport/gyro/Area3D" to="SubViewportContainer/SubViewport/gyro" method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
