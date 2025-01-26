@@ -9,5 +9,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.558723, 0.551955, 0.726921, 0)
+color = Color(0.809214, 0.80821, 0.898988, 0)
 script = ExtResource("1_ls0om")
