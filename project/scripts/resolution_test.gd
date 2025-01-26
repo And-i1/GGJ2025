@@ -4,9 +4,18 @@ extends Node
 var _dev_orientation 
 
 func _ready() -> void:
+	if Global.lvl == 1:
+		$SubViewportContainer/SubViewport/Environment/SpaceProgress.play("nothing")
+	elif Global.lvl == 2:
+		$SubViewportContainer/SubViewport/Environment/SpaceProgress.play("stars")
+	elif Global.lvl == 3:
+		$SubViewportContainer/SubViewport/Environment/SpaceProgress.play("stars_comet")
+	elif Global.lvl == 4:
+		$SubViewportContainer/SubViewport/Environment/SpaceProgress.play("everything")
 	$SubViewportContainer/SubViewport/Environment/Transitioner.play("outof_lvl")
 	var timer = get_tree().create_timer(10)
-	timer.timeout.connect(Callable(self, "transition_into"))
+	if Global.lvl != 4:
+		timer.timeout.connect(Callable(self, "transition_into"))
 	if OS.get_name() == "Web":
 		var window = JavaScriptBridge.get_interface("window")
 		_dev_orientation = JavaScriptBridge.create_callback(on_device_orientation)
