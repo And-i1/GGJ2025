@@ -17,7 +17,7 @@ func _ready() -> void:
 	if Global.lvl != 4:
 		timer.timeout.connect(Callable(self, "transition_into"))
 	else:
-		timer.timeout.connect(Callable(self, "transition_into"))
+		timer.timeout.connect(Callable(self, "credits"))
 	if OS.get_name() == "Web":
 		var window = JavaScriptBridge.get_interface("window")
 		_dev_orientation = JavaScriptBridge.create_callback(on_device_orientation)
