@@ -1,10 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://uqy20m4t3e50"]
+[gd_scene load_steps=18 format=3 uid="uid://uqy20m4t3e50"]
 
 [ext_resource type="Script" path="res://things/gyro/gyro.gd" id="1_6witg"]
 [ext_resource type="Script" path="res://things/lofi/lofi.gd" id="1_ympjb"]
 [ext_resource type="PackedScene" uid="uid://c1sl6wanw55q1" path="res://scenes/ball_3d.tscn" id="2_f0img"]
 [ext_resource type="PackedScene" uid="uid://ciix271un82cs" path="res://scenes/objective.tscn" id="3_0qren"]
-[ext_resource type="PackedScene" uid="uid://cdl5b5migytvo" path="res://scenes/level2.tscn" id="4_4suig"]
 [ext_resource type="Material" uid="uid://7su18vvywk06" path="res://textures/boardingame.mat.tres" id="4_c77ri"]
 [ext_resource type="PackedScene" uid="uid://blohlen8ww83j" path="res://scenes/directional_light_3d.tscn" id="7_vas5i"]
 
@@ -137,7 +136,6 @@ shape = SubResource("ConcavePolygonShape3D_3eu8k")
 
 [node name="Objective" parent="SubViewportContainer/SubViewport/gyro/Plane" instance=ExtResource("3_0qren")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 0.01, 0)
-scn = ExtResource("4_4suig")
 
 [node name="DirectionalLight3D" parent="SubViewportContainer/SubViewport/gyro" instance=ExtResource("7_vas5i")]
 
