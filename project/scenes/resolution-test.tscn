@@ -195,4 +195,6 @@ libraries = {
 "": SubResource("AnimationLibrary_2hvi0")
 }
 
+[connection signal="pressed" from="Btns/Itch" to="." method="_on_itch_pressed"]
+
 [editable path="SubViewportContainer"]

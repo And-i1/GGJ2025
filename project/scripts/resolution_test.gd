@@ -40,3 +40,7 @@ func transition_into():
 	
 func credits():
 	$CreditsAnimation.play("new_animation")
+
+
+func _on_itch_pressed():
+	window.location = "https://itch.io/jam/malagajam-weekend-19/rate/3268311"
