@@ -44,7 +44,7 @@ data = PackedVector3Array(-2, 1, 0.25, 2, 1, 0.25, -2, -1, 0.25, 2, 1, 0.25, 2, 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yjrc1"]
 size = Vector3(100, 1, 100)
 
-[node name="gyro" type="Node"]
+[node name="gyro" type="Node3D"]
 script = ExtResource("1_6witg")
 scn = ExtResource("2_f0img")
 
