@@ -30,12 +30,12 @@ func on_device_orientation(args) -> void:
 func _physics_process(delta):
 	$Plane.rotation_degrees = Vector3(move_toward($Plane.rotation_degrees.x, rotationobjective.x, 1)/clamp($Plane.global_position.distance_to(ball.global_position)/10,1,2), 0, move_toward($Plane.rotation_degrees.z, rotationobjective.z, 1)/clamp($Plane.global_position.distance_to(ball.global_position)/10,1,2))
 
-func _input(event):
-	if event is InputEventMouseButton and event.pressed:
-		if ball != null:
-			ball.queue_free()
-		ball = scn.instantiate()
-		add_child(ball, true)
+#func _input(event):
+#	if event is InputEventMouseButton and event.pressed:
+#		if ball != null:
+#			ball.queue_free()
+#		ball = scn.instantiate()
+#		add_child(ball, true)
 
 
 func _on_area_3d_area_entered(area):
