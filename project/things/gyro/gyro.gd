@@ -26,7 +26,6 @@ func on_device_orientation(args) -> void:
 	var xx = curve.sample(x/180)*turnstrength
 	var yy = curve.sample(y/180)*turnstrength
 	rotationobjective = Vector3(xx, 0, yy)
-	#$Debug.text = "x = {}\ny = {}".format(["%.2f" % xx, "%.2f" % yy], "{}")
 
 func _physics_process(delta):
 	$Plane.rotation_degrees = Vector3(move_toward($Plane.rotation_degrees.x, rotationobjective.x, 1)/clamp($Plane.global_position.distance_to(ball.global_position)/10,1,2), 0, move_toward($Plane.rotation_degrees.z, rotationobjective.z, 1)/clamp($Plane.global_position.distance_to(ball.global_position)/10,1,2))

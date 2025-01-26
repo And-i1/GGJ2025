@@ -3,9 +3,7 @@
 [ext_resource type="Script" path="res://things/scripts/objective.gd" id="1_5tq5x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02he5"]
-albedo_color = Color(0.54502, 0.762156, 0.380369, 1)
-emission_enabled = true
-emission = Color(0.459693, 0.913618, 0, 1)
+albedo_color = Color(0.0893521, 0.780487, 0.874484, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cfrt0"]
 material = SubResource("StandardMaterial3D_02he5")
