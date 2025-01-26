@@ -11,4 +11,4 @@ func _ready() -> void:
 	get_tree().change_scene_to_packed(Global.ship)
 	timer = get_tree().create_timer(1)
 	await timer.timeout
-	queue_free()
+	get_parent().get_parent().queue_free()

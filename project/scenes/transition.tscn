@@ -1,8 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw70awynyjem5"]
+[gd_scene load_steps=3 format=3 uid="uid://d1ho22uugwq7"]
 
 [ext_resource type="Script" path="res://scripts/transition.gd" id="1_43fgi"]
+[ext_resource type="Script" path="res://things/lofi/lofi.gd" id="1_ta7sy"]
 
-[node name="Transition" type="ColorRect"]
+[node name="SubViewportContainer" type="SubViewportContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ta7sy")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Transition" type="ColorRect" parent="SubViewport"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
