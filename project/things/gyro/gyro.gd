@@ -5,6 +5,7 @@ var curve = load("res://things/curve/new_curve.tres")
 @export var scn : PackedScene
 @export var turnstrength : float = 1
 @export var extradistancescaling : bool = false
+@export var extrascalingamount : float = 10
 @onready var ball = $Ball3D
 var rotationobjective = Vector3.ZERO
 
@@ -25,7 +26,7 @@ func on_device_orientation(args) -> void:
 	#var xx = remap(x, 0, 180, -30, 30)
 	#var yy = remap(y, 0, 180, -30, 30)
 	if extradistancescaling:
-		turnstrength = 1-($Plane.global_position.distance_to(ball.global_position)/10)
+		turnstrength = 1-($Plane.global_position.distance_to(ball.global_position)/extrascalingamount)
 	var xx = curve.sample(x/180)*turnstrength
 	var yy = curve.sample(y/180)*turnstrength
 	rotationobjective = Vector3(xx, 0, yy)

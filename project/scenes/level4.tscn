@@ -119,6 +119,7 @@ render_target_update_mode = 4
 script = ExtResource("2_xy0c3")
 scn = ExtResource("3_jjhcj")
 extradistancescaling = true
+extrascalingamount = 11.0
 
 [node name="Plane" type="Node3D" parent="SubViewportContainer/SubViewport/gyro"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.149, -1, 0)
