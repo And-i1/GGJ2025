@@ -1,13 +1,40 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dwoio8l8rva2v"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://dwoio8l8rva2v"]
 
 [ext_resource type="FontFile" uid="uid://o15tr0gvxt8t" path="res://fonts/m3x6.ttf" id="1_ipf4p"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_17tx2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uvep7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0tnw0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jcffp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jfgsv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jr8lu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_33c72"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_82rqp"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0qgqv"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_stli4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1mmcs"]
 
 [resource]
 default_font = ExtResource("1_ipf4p")
 default_font_size = 128
+Button/styles/disabled = SubResource("StyleBoxEmpty_17tx2")
+Button/styles/disabled_mirrored = SubResource("StyleBoxEmpty_uvep7")
+Button/styles/focus = SubResource("StyleBoxEmpty_0tnw0")
+Button/styles/hover = SubResource("StyleBoxEmpty_jcffp")
+Button/styles/hover_mirrored = SubResource("StyleBoxEmpty_jfgsv")
+Button/styles/hover_pressed = SubResource("StyleBoxEmpty_jr8lu")
+Button/styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_33c72")
 Button/styles/normal = SubResource("StyleBoxEmpty_82rqp")
+Button/styles/normal_mirrored = SubResource("StyleBoxEmpty_0qgqv")
 Button/styles/pressed = SubResource("StyleBoxEmpty_stli4")
+Button/styles/pressed_mirrored = SubResource("StyleBoxEmpty_1mmcs")
